@@ -1,0 +1,61 @@
+USE tomo_db;
+
+DROP TABLE IF EXISTS cons;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(240) NOT NULL,
+  email VARCHAR(240) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  bio TEXT NOT NULL,
+  photog BOOLEAN NOT NULL,
+  cos BOOLEAN NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE cons (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(240) NOT NULL,
+  date DATE NOT NULL,
+  location VARCHAR(240) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE con_schedule (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  con_id INT UNSIGNED NOT NULL,
+  start_time DATETIME NOT NULL,
+  end_time DATETIME NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (con_id) REFERENCES cons(id)
+);
+
+CREATE TABLE con_user (
+  user_id INT UNSIGNED NOT NULL,
+  con_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (con_id) REFERENCES cons(id)
+);
+
+CREATE TABLE images (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  url VARCHAR(400) NOT NULL,
+  user_id INT UNSIGNED NOT NULL,
+  featured_picture VARCHAR(400) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE messages (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  creator_id INT UNSIGNED NOT NULL,
+  recipient_id INT UNSIGNED NOT NULL,
+  body TEXT NOT NULL,
+  con_schedule_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (con_schedule_id) REFERENCES con_schedule(id),
+  FOREIGN KEY (creator_id) REFERENCES users(id),
+  FOREIGN KEY (recipient_id) REFERENCES users(id)
+);
