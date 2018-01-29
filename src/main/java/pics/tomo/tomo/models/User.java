@@ -29,7 +29,7 @@ public class User {
     @Column(nullable = false)
     private boolean cos;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Image> images; //but also has a list of images.
 
     @OneToMany
