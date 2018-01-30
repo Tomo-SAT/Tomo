@@ -15,29 +15,29 @@ import java.nio.file.Paths;
 @Controller
 public class PicUploadController {
 
-    @Value("${file-upload-path}")
-    private String uploadPath;
-
-    @GetMapping("/fileupload")
-    public String showUploadFileForm() {
-        return "fileupload";
-    }
-
-    @PostMapping("/fileupload")
-    public String saveFile(
-            @RequestParam(name = "file") MultipartFile uploadedFile,
-            Model model
-    ) {
-        String filename = uploadedFile.getOriginalFilename();
-        String filepath = Paths.get(uploadPath, filename).toString();
-        File destinationFile = new File(filepath);
-        try {
-            uploadedFile.transferTo(destinationFile);
-            model.addAttribute("message", "File successfully uploaded!");
-        } catch (IOException e) {
-            e.printStackTrace();
-            model.addAttribute("message", "Oops! Something went wrong! " + e);
-        }
-        return "fileupload";
-    }
+//    @Value("${file-upload-path}")
+//    private String uploadPath;
+//
+//    @GetMapping("/fileupload")
+//    public String showUploadFileForm() {
+//        return "fileupload";
+//    }
+//
+//    @PostMapping("/fileupload")
+//    public String saveFile(
+//            @RequestParam(name = "file") MultipartFile uploadedFile,
+//            Model model
+//    ) {
+//        String filename = uploadedFile.getOriginalFilename();
+//        String filepath = Paths.get(uploadPath, filename).toString();
+//        File destinationFile = new File(filepath);
+//        try {
+//            uploadedFile.transferTo(destinationFile);
+//            model.addAttribute("message", "File successfully uploaded!");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            model.addAttribute("message", "Oops! Something went wrong! " + e);
+//        }
+//        return "fileupload";
+//    }
 }
