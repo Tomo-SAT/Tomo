@@ -42,7 +42,7 @@ public class User {
     public List<Con> cons;
 
 
-    public User(User copy) {
+    public User() {
         id = copy.id;
         name = copy.name;
         email = copy.email;
