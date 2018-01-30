@@ -1,7 +1,6 @@
 package pics.tomo.tomo.models;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -42,20 +41,20 @@ public class User {
     public List<Con> cons;
 
 
-    public User() {
-        id = copy.id;
-        name = copy.name;
-        email = copy.email;
-        password = copy.password;
-        bio = copy.bio;
-        photog = copy.photog;
-        cos = copy.cos;
-        images = copy.images;
-        messages = copy.messages;
-        con_schedule = copy.con_schedule;
-    }
+//    public User() {
+//        id = copy.id;
+//        name = copy.name;
+//        email = copy.email;
+//        password = copy.password;
+//        bio = copy.bio;
+//        photog = copy.photog;
+//        cos = copy.cos;
+//        images = copy.images;
+//        messages = copy.messages;
+//        con_schedule = copy.con_schedule;
+//    }
 
-    public User(long id, String name, String email, String password, boolean photog, boolean cos) {
+    public User() {
         this.id = id;
         this.name = name;
         this.email = email;
