@@ -11,11 +11,9 @@ public class Message {
     private long id;
 
     @ManyToOne
-    @Column
     private User creator;
 
     @ManyToOne
-    @Column
     private User recipient;
 
     @Column
