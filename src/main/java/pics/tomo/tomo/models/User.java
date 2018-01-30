@@ -36,7 +36,7 @@ public class User {
     private List<Message> messages;
 
     @OneToMany
-    private LocalDateTime con_schedule;
+    private List<ConSchedule> con_schedule;
 
     @OneToMany()
     public List<Con> cons;
