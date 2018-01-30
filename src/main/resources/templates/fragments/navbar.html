@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="/posts/">Tomo</a>
+                <a class="navbar-brand" href="../home.HTML">Tomo</a>
             </div>
             <form action="/search">
                 <input type="text" name="search" class="form-control" placeholder="search">
@@ -20,11 +20,11 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/register">Register</a></li>
                 <li><a href="/login">Login</a></li>
-                <li sec:authorize="isAuthenticated()">
-                    <a href="/profile">
-                        <span th:text="${#authentication.principal.username}"/>'s Profile
-                    </a>
-                </li>
+                <!--<li sec:authorize="isAuthenticated()">-->
+                    <!--<a href="/profile">-->
+                        <!--<span th:text="${#authentication.principal.username}"/>'s Profile-->
+                    <!--</a>-->
+                <!--</li>-->
                 <li>
                     <form th:action="@{/logout}" th:method="post">
                         <button class="btn-link btn" style="margin-top: 8px">Logout</button>
