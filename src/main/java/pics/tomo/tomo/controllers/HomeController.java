@@ -11,4 +11,9 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/upcomingCons")
+    public String upcoming() {
+        return "/cons/upcomingCons";
+    }
+
 }
