@@ -6,7 +6,7 @@
 <nav th:include="fragments/navbar :: my-navbar"></nav>
 
 <h1>Create an account</h1>
-<form th:action="@{/sign-up}" method="POST" th:object="${user}">
+<form th:action="@{/register}" method="POST" th:object="${user}">
     <label for="name">Name</label>
     <input id="name" th:field="*{name}" />
 

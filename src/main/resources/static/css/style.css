@@ -1,5 +1,5 @@
 .resize {
-    height: 500px;
+    height: 500px !important;
     width: auto;
     padding: 0px 10px 0px 10px;
 }
