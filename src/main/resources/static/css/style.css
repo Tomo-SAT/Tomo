@@ -1,15 +1,13 @@
-/*.resize {*/
-    /*height: 500px;*/
-    /*width: auto;*/
-    /*padding: 0px 10px 0px 10px;*/
-/*}*/
-
-.carousel-inner > .item > img {
-    /*width:640px;*/
+.resize {
+    height: 500px;
     width: auto;
-    height:360px;
+    padding: 0px 10px 0px 10px;
 }
 
 .title {
     text-align: center;
+}
+
+.body {
+    /*background-color: grey;*/
 }
