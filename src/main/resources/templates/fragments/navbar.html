@@ -6,41 +6,6 @@
 
 <form th:fragment="my-navbar">
 
-
-    <!--<nav class="navbar navbar-default">-->
-        <!--<div class="container-fluid">-->
-            <!--&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;-->
-            <!--<div class="navbar-header">-->
-                <!--<a class="navbar-brand" href="../home.HTML">Tomo</a>-->
-            <!--</div>-->
-            <!--<ul class="nav navbar-nav navbar-right">-->
-
-                <!--<li><a href="/register">Register</a></li>-->
-                <!--<li><a href="/login">Login</a></li>-->
-                <!--&lt;!&ndash;<li sec:authorize="isAuthenticated()">&ndash;&gt;-->
-                <!--&lt;!&ndash;<a href="/profile">&ndash;&gt;-->
-                <!--&lt;!&ndash;<span th:text="${#authentication.principal.username}"/>'s Profile&ndash;&gt;-->
-                <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                <!--<li>-->
-                    <!--<form th:action="@{/logout}" th:method="post">-->
-                        <!--<button class="btn-link btn" style="margin-top: 8px">Logout</button>-->
-                    <!--</form>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--<form class="navbar-form" role="/search">-->
-            <!--<div class="input-group">-->
-                <!--<input type="text" name="search" class="form-control" placeholder="search" />-->
-                <!--<button type="submit" class="btn btn-default">Search</button>-->
-            <!--</div>-->
-        <!--</form>-->
-    <!--</nav>-->
-
-
-
-
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,8 +22,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Register</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/register">Register</a></li>
         </ul>
         <div class="col-sm-3 col-md-3">
             <form class="navbar-form" role="search">
@@ -71,17 +36,7 @@
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Login</a></li>
-            <!--<li class="dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Action</a></li>-->
-                    <!--<li><a href="#">Another action</a></li>-->
-                    <!--<li><a href="#">Something else here</a></li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">Separated link</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
+            <li><a href="/login">Login</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
