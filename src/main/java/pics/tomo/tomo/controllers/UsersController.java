@@ -20,6 +20,11 @@ public class UsersController {
 //        this.passwordEncoder = passwordEncoder;
 //    }
 
+
+    public UsersController(UsersRepository usersDao) {
+        this.usersDao = usersDao;
+    }
+
     @GetMapping("/login")
     public String showLoginForm(Model model) {
         model.addAttribute("user", new User());
