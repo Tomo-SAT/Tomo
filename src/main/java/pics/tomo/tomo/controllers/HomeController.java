@@ -11,4 +11,14 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/upcomingCons")
+    public String upcoming() {
+        return "/cons/upcomingCons";
+    }
+
+    @GetMapping("/messages")
+    public String messages() {
+        return "/cons/messages";
+    }
+
 }
