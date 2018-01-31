@@ -7,8 +7,8 @@
 
 <h1>Create an account</h1>
 <form th:action="@{/sign-up}" method="POST" th:object="${user}">
-    <label for="username">Name</label>
-    <input id="username" th:field="*{username}" />
+    <label for="name">Name</label>
+    <input id="name" th:field="*{name}" />
 
     <label for="email">Email</label>
     <input id="email" th:field="*{email}" />
@@ -17,7 +17,7 @@
     <input id="password" type="password" th:field="*{password}" />
 
     <input value="Sign me up!" type="submit" />
-
+</form>
 
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
