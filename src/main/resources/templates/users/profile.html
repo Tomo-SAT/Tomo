@@ -12,15 +12,18 @@
     <main>
         <div class="row">
             <div class="left col-lg-4">
-                <div class="photo-left">
-                    <img class="photo" src="#" />
+                <div class="avatar">
+                    <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     <div class="active"></div>
                 </div>
+
+                <div id="user-details">
                 <h4 class="name"></h4>
                 <p class="info"></p>
                 <p class="info"></p>
-
                 <p class="desc"></p>
+
+                </div>
 
                 <div class="social">
                     <i class="fa fa-facebook-square" aria-hidden="true"></i>
@@ -29,29 +32,31 @@
                 </div>
             </div>
             <div class="right col-lg-10">
-                <ul class="nav">
-                    <li>Past</li>
-                    <li>Upcomming</li>
+                <div clas="cons-container profile-right">
+                <ul>
+                    <!--<li>Past</li>-->
+                    <li th:onclick="location.href='upcomingCons.html'">Upcomming</li>
                 </ul>
+                </div>
                 <span class="follow">Follow</span>
                 <div class="row gallery">
                     <div class="col-md-4">
-                        <img src="#" />
+                        <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                     <div class="col-md-4">
-                        <img src="#" />
+                        <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                     <div class="col-md-4">
-                        <img src="#" />
+                        <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                     <div class="col-md-4">
-                        <img src="#" />
+                        <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                     <div class="col-md-4">
-                        <img src="#" />
+                        <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                     <div class="col-md-4">
-                        <img src="#" />
+                        <img src="static/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                 </div>
             </div>
