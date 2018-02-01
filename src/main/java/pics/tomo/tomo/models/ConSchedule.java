@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="con_schedule")
+@Table(name="conSchedule")
 public class ConSchedule {
 
     @Id

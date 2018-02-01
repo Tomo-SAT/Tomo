@@ -55,7 +55,7 @@ CREATE TABLE messages (
   recipient_id INT UNSIGNED NOT NULL,
   body TEXT NOT NULL,
   con_schedule_id INT UNSIGNED NOT NULL,
-  FOREIGN KEY (con_schedule_id) REFERENCES con_schedule(id),
+  FOREIGN KEY (con_schedule_id) REFERENCES conSchedule(id),
   FOREIGN KEY (creator_id) REFERENCES users(id),
   FOREIGN KEY (recipient_id) REFERENCES users(id)
 );

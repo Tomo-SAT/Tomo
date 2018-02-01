@@ -2,6 +2,7 @@ package pics.tomo.tomo.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="cons")
@@ -19,6 +20,9 @@ public class Con {
 
     @Column(nullable = false)
     private String location;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "con")
+    private List<ConSchedule> conSchedule;
 
     public Con(String name, LocalDateTime date, String location) {
         this.name = name;

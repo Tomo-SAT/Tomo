@@ -6,8 +6,9 @@
 
 .title {
     text-align: center;
+    font-family: 'Anton', sans-serif;
 }
 
 .body {
-    /*background-color: grey;*/
+    background-color: #cccccc;
 }
