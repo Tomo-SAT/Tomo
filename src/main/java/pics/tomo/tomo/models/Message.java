@@ -11,9 +11,11 @@ public class Message {
     private long id;
 
     @ManyToOne
+    @JoinColumn (name = "creator_id")
     private User creator;
 
     @ManyToOne
+    @JoinColumn (name = "recipient_id")
     private User recipient;
 
     @Column
