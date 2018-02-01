@@ -31,14 +31,14 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Image> images; //but also has a list of images.
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Message> messages;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "creator")
+    private List<Message> messagesSent;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipient")
+    private List<Message> messagesReceived;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<ConSchedule> conSchedule;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    public List<Con> cons;
 
 
     public User() {
