@@ -4,11 +4,60 @@
 </head>
 <body>
 <nav th:include="fragments/navbar :: my-navbar"></nav>
-    <div>
 
+<div class="container">
+    <header>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </header>
+    <main>
+        <div class="row">
+            <div class="left col-lg-4">
+                <div class="photo-left">
+                    <img class="photo" src="#" />
+                    <div class="active"></div>
+                </div>
+                <h4 class="name"></h4>
+                <p class="info"></p>
+                <p class="info"></p>
 
-    </div>
+                <p class="desc"></p>
 
+                <div class="social">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-tumblr-square" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="right col-lg-10">
+                <ul class="nav">
+                    <li>Past</li>
+                    <li>Upcomming</li>
+                </ul>
+                <span class="follow">Follow</span>
+                <div class="row gallery">
+                    <div class="col-md-4">
+                        <img src="#" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="#" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="#" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="#" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="#" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
 </html>
