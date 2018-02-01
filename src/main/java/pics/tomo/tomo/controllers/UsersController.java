@@ -1,6 +1,7 @@
 package pics.tomo.tomo.controllers;
 
-//import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +14,11 @@ import pics.tomo.tomo.models.User;
 public class UsersController {
 
     private UsersRepository usersDao;
-//    private PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
-//    public UsersController(UsersRepository usersDao) {
-//        this.usersDao = userDao;
-//        this.passwordEncoder = passwordEncoder;
-//    }
-
-
-    public UsersController(UsersRepository usersDao) {
+    public UsersController(UsersRepository usersDao, PasswordEncoder passwordEncoder) {
         this.usersDao = usersDao;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/login")
@@ -39,17 +35,16 @@ public class UsersController {
 
     @PostMapping("/register")
     public String saveUser(@ModelAttribute User user){
-//        String hash = passwordEncoder.encode(user.getPassword());
-//        user.setPassword(hash);
-//        usersDao.save(user);
+        String hash = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hash);
+        usersDao.save(user);
         return "redirect:/login";
     }
 
     @GetMapping("/profile")
     public String showProfilePage(Model model) {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("user", user);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user", user);
         return "users/profile";
     }
-
 }

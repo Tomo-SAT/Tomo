@@ -28,20 +28,20 @@ public class User {
     @Column(nullable = false)
     private boolean cos;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Image> images; //but also has a list of images.
 
-    @OneToMany
-    private List<Message> messages;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "creator")
+    private List<Message> messagesSent;
 
-    @OneToMany
-    private List<ConSchedule> con_schedule;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipient")
+    private List<Message> messagesReceived;
 
-    @OneToMany()
-    public List<Con> cons;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<ConSchedule> conSchedule;
 
 
-//    public User() {
+    public User() {
 //        id = copy.id;
 //        name = copy.name;
 //        email = copy.email;
@@ -51,10 +51,10 @@ public class User {
 //        cos = copy.cos;
 //        images = copy.images;
 //        messages = copy.messages;
-//        con_schedule = copy.con_schedule;
-//    }
+//        conSchedule = copy.conSchedule;
+    }
 
-    public User() {
+    public User(User user) {
         this.id = id;
         this.name = name;
         this.email = email;

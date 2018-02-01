@@ -11,16 +11,18 @@ public class Message {
     private long id;
 
     @ManyToOne
+    @JoinColumn (name = "creator_id")
     private User creator;
 
     @ManyToOne
+    @JoinColumn (name = "recipient_id")
     private User recipient;
 
     @Column
     private String body;
 
     @ManyToOne
-    @JoinColumn (name = "con_schedule_id")
+    @JoinColumn (name = "conSchedule_id")
     private ConSchedule conSchedule;
 
     public Message(User creator, User recipient, String body, ConSchedule conSchedule) {
