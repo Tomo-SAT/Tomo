@@ -21,4 +21,9 @@ public class HomeController {
         return "/cons/messages";
     }
 
+    @GetMapping("/display")
+    public String display() {
+        return "/users/display";
+    }
+
 }
