@@ -20,7 +20,7 @@ public class Message {
     private String body;
 
     @ManyToOne
-    @JoinColumn (name = "con_schedule_id")
+    @JoinColumn (name = "conSchedule_id")
     private ConSchedule conSchedule;
 
     public Message(User creator, User recipient, String body, ConSchedule conSchedule) {
