@@ -5,19 +5,53 @@
 <body>
 <nav th:include="fragments/navbar :: my-navbar"></nav>
 
-<h1>Create an account</h1>
 <form th:action="@{/register}" method="POST" th:object="${user}">
-    <label for="name">Name</label>
-    <input id="name" th:field="*{name}" />
+    <div class="container">
+    <h1>Create an account</h1>
+        <label for="name">Name</label>
+        <input id="name" th:field="*{name}" />
 
-    <label for="email">Email</label>
-    <input id="email" th:field="*{email}" />
+        <br />
 
-    <label for="password">Password</label>
-    <input id="password" type="password" th:field="*{password}" />
+        <label for="email">Email</label>
+        <input id="email" th:field="*{email}" />
 
-    <input value="Sign me up!" type="submit" />
+        <br />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" th:field="*{password}" />
+
+        <br />
+        <hr />
+
+
+        <div class="panel panel-default container">
+            <div class="panel-heading">Choose your role:</div>
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="role" value="cosplayer" />
+                            Cosplayer
+                        </label>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-info">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="role" value="photog" />
+                            Photographer
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <input value="Sign up!" type="submit" />
+    </div>
 </form>
+
 
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
