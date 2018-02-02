@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: my-header(${con.name})">
+</head>
+<body>
+<nav th:include="fragments/navbar :: my-navbar"></nav>
+
+
+
+<div class="container">
+
+    <h3 th:text="${con.name}"></h3>
+    <p th:text="${con.location}"></p>
+    <p th:text="${con.date_start}"></p>
+    <p th:text="${con.date_end}"></p>
+    <p th:text="${con.phone}"></p>
+    <a th:href="${'http://'+con.url}"><p th:text="${con.url}"></p></a>
+
+
+</div>
+
+
+
+<footer th:include="fragments/footer :: my-footer"></footer>
+</body>
+</html>
