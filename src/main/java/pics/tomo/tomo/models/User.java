@@ -42,16 +42,7 @@ public class User {
 
 
     public User() {
-//        id = copy.id;
-//        name = copy.name;
-//        email = copy.email;
-//        password = copy.password;
-//        bio = copy.bio;
-//        photog = copy.photog;
-//        cos = copy.cos;
-//        images = copy.images;
-//        messages = copy.messages;
-//        conSchedule = copy.conSchedule;
+
     }
 
     public User(User user) {
