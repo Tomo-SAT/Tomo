@@ -1,0 +1,6 @@
+INSERT INTO tomo_db.cons (date_end, date_start, location, name, phone, url) VALUES ('2018-02-18 18:00:00', '2018-02-16 09:00:00', '201 Waterfront St, Oxon Hill, MD 20745', 'Katsucon', '(301) 965-4000', 'www.katsucon.org');
+INSERT INTO tomo_db.cons (date_end, date_start, location, name, phone, url) VALUES ('2018-04-01 18:00:00', '2018-03-20 09:00:00', '1001 Avenida De Las Americas, Houston, TX 77010', 'Anime Matsuri', '(713) 853-8000', 'www.animematsuri.com');
+INSERT INTO tomo_db.cons (date_end, date_start, location, name, phone, url) VALUES ('2018-04-08 18:00:00', '2018-04-06 09:00:00', '650 S Griffin St, Dallas, TX 75202', 'Fan Expo Dallas', '(214) 939-2750', 'www.fanexpodallas.com');
+INSERT INTO tomo_db.cons (date_end, date_start, location, name, phone, url) VALUES ('2018-06-10 18:00:00', '2018-06-07 09:00:00', '1201 Houston St, Fort Worth, TX 76102', 'A-Kon', '(800) 433-5747', 'www.a-kon.com');
+INSERT INTO tomo_db.cons (date_end, date_start, location, name, phone, url) VALUES ('2018-07-08 18:00:00', '2018-07-04 09:00:00', '1201 S Figueroa St, Los Angeles, CA 90015', 'Anime Expo', '(213) 741-1151', 'www.anime-expo.org');
+INSERT INTO tomo_db.cons (date_end, date_start, location, name, phone, url) VALUES ('2018-11-04 18:00:00', '2018-11-03 09:00:00', '800 W Katella Ave, Anaheim, CA 92802', 'BlizzCon', '(714) 765-8950', 'www.blizzcon.com');
