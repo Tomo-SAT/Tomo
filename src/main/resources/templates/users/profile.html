@@ -11,15 +11,14 @@
             <div class="left col-lg-4">
 
                 <div class="avatar">
-                    <img src="/img/blank.png" alt="" class="img-thumbnail"/>
+                    <div></div>
                     <div class="active"></div>
                 </div>
 
                 <div id="user-details">
-                <h4 class="name"></h4>
-                <p class="info"></p>
-                <p class="info"></p>
-                <p class="desc"></p>
+                    <h4 id="username" th:field="*{users.name}"></h4>
+                <p id="info" th:field="${users.bio}"></p>
+                <p th:field="${users.photog}"></p>
                 </div>
 
                 <!--<div class="social">-->
@@ -31,21 +30,17 @@
             <div class="right col-lg-10">
                 <div clas="cons-container profile-right">
                     <div class="profile-cons">
-
-
-                <ul>
                     <!--<li>Past</li>-->
-                    <h3><li th:onclick="upcomingCons.html">Upcomming</li></h3>
-                </ul>
+                        <img id="temp-display" src="https://process.filestackapi.com/AwjEmOSsTKuJMBQBVgE7fz"/>
+                        <h3>Upcomming</h3>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary">Follow</button>
+                <button type="button" class="btn btn-secondary" id="upload-button">Upload</button>
                 <div class="row gallery">
                     <div class="col-md-4">
-                        <img src="/img/blank.png" alt="..." class="img-thumbnail"/>
                     </div>
                     <div class="col-md-4">
-                        <img src="/img/blank.png" alt="..." class="img-thumbnail"/>
+                        <img src="/img/blank.png" id="user-image-display"/>
                     </div>
                     <div class="col-md-4">
                         <img src="/img/blank.png" alt="..." class="img-thumbnail"/>

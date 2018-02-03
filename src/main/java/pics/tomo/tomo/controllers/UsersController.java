@@ -43,8 +43,8 @@ public class UsersController {
 
     @GetMapping("/profile")
     public String showProfilePage(Model model) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("user", user);
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("user", user);
         return "users/profile";
     }
 }

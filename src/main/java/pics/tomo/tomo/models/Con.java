@@ -27,6 +27,9 @@ public class Con {
     @Column(nullable = false)
     private String url;
 
+    @Column(nullable = false)
+    private String phone;
+
     public String getUrl() {
         return url;
     }
@@ -43,8 +46,6 @@ public class Con {
         this.phone = phone;
     }
 
-    @Column(nullable = false)
-    private String phone;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "con")
     private List<ConSchedule> conSchedule;
