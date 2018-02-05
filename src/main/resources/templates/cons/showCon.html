@@ -15,7 +15,7 @@
     End Date: <p th:text="${con.date_end}"></p>
     <p th:text="${con.phone}"></p>
     <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
-    <input type="submit" value="Add to my List"/>
+    <button id="myButton" class="submit-button" >Add to my List</button>
 
     <input type="hidden" id="location" name="location" th:value="${con.location}"/>
 
@@ -31,6 +31,10 @@
 <script th:line="javascript">
 
     "use strict";
+
+    document.getElementById("myButton").onclick = function () {
+        location.href = "/addCon";
+    };
 
     // ============== BUILD MAP
     var mapOptions = {
@@ -77,18 +81,12 @@
 
     function addMarkerAndInfoWindow(position) {
 
-
-        //google.maps.event.addListener(map, "click", function(e) {
-        //var position = {lat: e.latLng.lat(), lng: e.latLng.lng()};
         var marker = new google.maps.Marker({
             position: position,
             map: map,
             draggable: true,
             animation: google.maps.Animation.DROP
         });
-
-        //});
-
 
     }
 
