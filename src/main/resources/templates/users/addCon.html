@@ -8,6 +8,15 @@
 <div class="container">
     <h1>ADD CON</h1>
 </div>
+<div th:each="con : ${cons}">
+    <ul>
+        <li>
+            <a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>
+            <p th:text="${con.date_start}"></p>
+            <p th:text="${con.date_end}"></p>
+        </li>
+    </ul>
+</div>
 
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
