@@ -4,9 +4,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pics.tomo.tomo.daos.UsersRepository;
 import pics.tomo.tomo.models.User;
 
@@ -43,15 +41,9 @@ public class UsersController {
 
     @GetMapping("/profile")
     public String showProfilePage(Model model) {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("user", user);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user", user);
         return "users/profile";
-    }
-
-    @GetMapping("/addCon")
-    public String addConPage(Model model){
-//        model.addAttribute("user", new User());
-        return "users/addCon";
     }
 
 }

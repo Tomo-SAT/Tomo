@@ -40,6 +40,15 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<ConSchedule> conSchedule;
 
+    private String profilePicture;
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
 
     public User() {
 
@@ -52,6 +61,7 @@ public class User {
         this.password = user.password;
         this.photog = user.photog;
         this.cos = user.cos;
+        this.profilePicture = user.profilePicture;
     }
 
     public long getId() {
