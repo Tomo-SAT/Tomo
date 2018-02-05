@@ -46,12 +46,12 @@ public class User {
     }
 
     public User(User user) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.photog = photog;
-        this.cos = cos;
+        this.id = user.id;
+        this.name = user.name;
+        this.email = user.email;
+        this.password = user.password;
+        this.photog = user.photog;
+        this.cos = user.cos;
     }
 
     public long getId() {
