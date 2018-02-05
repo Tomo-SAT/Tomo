@@ -15,19 +15,19 @@ Tomo Capstone project
 
 Pages:
 
-Landing page
-Profile page
-All con page
+Landing page [done]
+Profile page 
+All con page [done]
 Specific con page (with schedule)
 Booking page
-Signup page
+Signup page [done]
 Schedule page
 
 
 API’s:
 
 Need to-
-Google maps
+Google maps [done]
 Filestack 
 Calendar (calendly)
 

@@ -47,4 +47,11 @@ public class UsersController {
 //        model.addAttribute("user", user);
         return "users/profile";
     }
+
+    @GetMapping("/addCon")
+    public String addConPage(Model model){
+//        model.addAttribute("user", new User());
+        return "users/addCon";
+    }
+
 }
