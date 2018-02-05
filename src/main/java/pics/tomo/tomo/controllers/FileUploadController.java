@@ -1,20 +1,22 @@
 package pics.tomo.tomo.controllers;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
+import pics.tomo.tomo.daos.UsersRepository;
+import pics.tomo.tomo.models.User;
 
 @Controller
     public class FileUploadController {
+
+        private UsersRepository usersRepo;
+
+        public FileUploadController(UsersRepository usersRepo) {
+            this.usersRepo = usersRepo;
+        }
 
 //        @Value("${file-upload-path}")
 //        private String uploadPath;
@@ -28,12 +30,18 @@ import java.nio.file.Paths;
         @ResponseBody
         public String saveFile(
                 //@RequestParam(name = "img-display") MultipartFile uploadedFile,
-                @RequestParam("url") String url,
-                @RequestParam("id") long userId
+                @RequestParam(value = "url", required = false) String url,
+                @RequestParam(value = "id", required = false) Long userId
         ) {
 
+            User loggedInUser = (User) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
 
             System.out.println("[saveFile] url: " + url);
+            User user = usersRepo.findOne(loggedInUser.getId());
+            user.setProfilePicture(url);
+            usersRepo.save(user);
             // INJECT THE USER REPOSITORY
             // CALL THE METHOD findOne USING THE userId variable
             // images.setProfilePic(url);
@@ -49,7 +57,7 @@ import java.nio.file.Paths;
 //                e.printStackTrace();
 //                model.addAttribute("message", "Oops! Something went wrong! " + e);
 //            }
-            return "ok";
+            return "redirect:/users/profile";
         }
     }
 

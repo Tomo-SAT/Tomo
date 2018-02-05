@@ -29,36 +29,36 @@
             </div>
             <div class="right col-lg-10">
                 <div clas="cons-container profile-right">
+                    <img th:src="${user.profilePicture}" />
                     <div class="profile-cons">
                         <!--<li>Past</li>-->
                         <a id="url" href=""></a>
                         <h3>Upcomming</h3>
                     </div>
-                    <img src="http://lorempixel.com/g/325/400" class="user-image-display"/>
+                    <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
                     <br/>
                     <!--<input type="hidden" id="user-id" th:value="${user.id}"/>-->
                     <button type="button" class="btn btn-secondary" id="upload-button">Upload</button>
                 </div>
-                <div class="row gallery">
-                    <div class="col-md-4">
-                        <img src="http://lorempixel.com/g/325/400" class="user-image-display"
-                             name="user-image-display"/>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="/img/blank.png" id="img-thumbnail" name="user-image-display"/>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>
-                    </div>
+                <!--<div class="row gallery">-->
+                    <!--<div class="col-md-4">-->
+                        <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"-->
+                             <!--name="user-image-display"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<img src="/img/blank.png" id="img-thumbnail" name="user-image-display"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
+                    <!--</div>-->
                 </div>
             </div>
-        </div>
     </main>
 </div>
 <footer th:include="fragments/footer :: my-footer"></footer>

@@ -17,11 +17,10 @@ $(document).ready(function () {
         }).then(function(response) {
             console.log(response.filesUploaded[0].url);
             var conImage = {
-                url: response.filesUploaded[0].url,
-                id: $('#user-id').val()
+                url: response.filesUploaded[0].url
             };
             $.post("/profile/image", conImage).done(function(response) {
-                // window.location = "/profile";
+                window.location = "/profile";
                 // handleFilestack(response);
                 console.log(response)
             });
