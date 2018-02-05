@@ -5,7 +5,7 @@ Tomo Capstone project
 - [x] Login
 - [x] Logout
 - [ ] Edit Profile
-- [ ] Users can upload pictures to profile and have many pictures on page
+- [x] Users can upload pictures to profile and have many pictures on page
 - [ ] Delete picture posting
 - [ ] Users can schedule an apportionment with either a cosplayer or a photographer
 - [ ] Scheduling edit
@@ -18,8 +18,8 @@ Pages:
 Landing page [done]
 Profile page 
 All con page [done]
-Specific con page (with schedule)
-Booking page
+Specific con page [done]
+Booking page [WIP]
 Signup page [done]
 Schedule page
 
@@ -28,7 +28,7 @@ API’s:
 
 Need to-
 Google maps [done]
-Filestack 
+Filestack [done]
 Calendar (calendly)
 
 
