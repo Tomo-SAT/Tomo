@@ -1,26 +1,97 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/header :: my-header(${con.name})">
+
 </head>
 <body>
 <nav th:include="fragments/navbar :: my-navbar"></nav>
-
 
 
 <div class="container">
 
     <h3 th:text="${con.name}"></h3>
     <p th:text="${con.location}"></p>
-    <p th:text="${con.date_start}"></p>
-    <p th:text="${con.date_end}"></p>
+    Start Date: <p th:text="${con.date_start}"></p>
+    End Date: <p th:text="${con.date_end}"></p>
     <p th:text="${con.phone}"></p>
-    <a th:href="${'http://' + con.url}"><p th:text="${con.url}"></p></a>
+    <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
+    <input type="submit" value="Add to my List"/>
 
+    <input type="hidden" id="location" name="location" th:value="${con.location}"/>
+
+    <br />
+    <div id="map" style="height: 500px"></div>
 
 </div>
 
 
-
 <footer th:include="fragments/footer :: my-footer"></footer>
+
+<!-- Custom JS -->
+<script th:line="javascript">
+
+    "use strict";
+
+    // ============== BUILD MAP
+    var mapOptions = {
+        zoom: 17,
+        center: {
+            lat: 25.9099,
+            lng: -97.4715
+        }
+    };
+
+    var address = document.getElementById("location").value;
+
+    var con = {
+        address: address
+    };
+
+    function initMap(optionsObject) {
+        return new google.maps.Map(document.getElementById("map"), optionsObject);
+    }
+
+    var map = initMap(mapOptions);
+
+
+    function getLocation(address) {
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({address: address}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var position = results[0].geometry.location;
+                map.setCenter(position);
+                addMarkerAndInfoWindow(position, con.name, con.info);
+            } else {
+                alert("Geocoding unsuccessful");
+            }
+        });
+
+    }
+
+    getLocation(con.address);
+
+    //  ============== ADD MARKER AND INFO WINDOW
+
+
+    function addMarkerAndInfoWindow(position) {
+
+
+        //google.maps.event.addListener(map, "click", function(e) {
+        //var position = {lat: e.latLng.lat(), lng: e.latLng.lng()};
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP
+        });
+
+        //});
+
+
+    }
+
+</script>
 </body>
 </html>

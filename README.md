@@ -1,9 +1,9 @@
 # Tomo
 Tomo Capstone project
 
-- [ ] Register user
-- [ ] Login
-- [ ] Logout
+- [x] Register user
+- [x] Login
+- [x] Logout
 - [ ] Edit Profile
 - [ ] Users can upload pictures to profile and have many pictures on page
 - [ ] Delete picture posting

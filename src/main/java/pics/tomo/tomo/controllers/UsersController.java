@@ -19,11 +19,11 @@ public class UsersController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/login")
-    public String showLoginForm(Model model) {
-        model.addAttribute("user", new User());
-        return "users/login";
-    }
+//    @GetMapping("/login")
+//    public String showLoginForm(Model model) {
+//        model.addAttribute("user", new User());
+//        return "users/login";
+//    }
 
     @GetMapping("/register")
     public String showRegisterForm(Model model){

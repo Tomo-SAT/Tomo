@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: my-header('calender')">
+</head>
+<body>
+<nav th:include="fragments/navbar :: my-navbar"></nav>
+
+<h2>Dates. </h2>
+
+<div th:each="con : ${cons}">
+    <ul>
+        <li>
+            <a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>
+            <p th:text="${con.date_start}"></p>
+            <p th:text="${con.date_end}"></p>
+        </li>
+    </ul>
+</div>
+
+<hr/>
+
+
+
+
+
+<div>8:00</div>
+<div>9:00</div>
+<div>10:00</div>
+<div>11:00</div>
+<div>12:00</div>
+<div>1:00</div>
+<div>2:00</div>
+<div>3:00</div>
+<div>4:00</div>
+<div>5:00</div>
+<div>6:00</div>
+<div>7:00</div>
+<div>8:00</div>
+<div>9:00</div>
+<div>10:00</div>
+
+
+
+<footer th:include="fragments/footer :: my-footer"></footer>
+</body>
+</html>
