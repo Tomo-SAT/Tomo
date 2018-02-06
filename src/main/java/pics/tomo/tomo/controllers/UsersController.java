@@ -47,11 +47,11 @@ public class UsersController {
         return "users/profile";
     }
 
-    @GetMapping("/addCon")
-    public String addConPage(Model model) {
+//    @GetMapping("/addCon")
+//    public String addConPage(Model model) {
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        model.addAttribute("user", user);
-        return "users/addCon";
-    }
+//        return "users/addCon";
+//    }
 
 }
