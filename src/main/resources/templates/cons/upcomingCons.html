@@ -12,8 +12,15 @@
         <ul>
             <li>
                 <a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>
-                Start date: <p th:text="${con.date_start}"></p>
-                End Date: <p th:text="${con.date_end}"></p>
+                Start Date: <span th:text="${#dates.monthNameShort(con.date_start)}"></span>
+                <span th:text="${#dates.day(con.date_start)}"></span>,
+                <span th:text="${#dates.year(con.date_start)}"></span>
+                at <span th:text="${#dates.format(con.date_start, 'hh:mm a')}"></span>
+                <br/>
+                End Date: <span th:text="${#dates.monthNameShort(con.date_end)}"></span>
+                <span th:text="${#dates.day(con.date_end)}"></span>,
+                <span th:text="${#dates.year(con.date_end)}"></span>
+                at <span th:text="${#dates.format(con.date_end, 'hh:mm a')}"></span>
             </li>
         </ul>
     </div>

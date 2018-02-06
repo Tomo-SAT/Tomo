@@ -11,8 +11,15 @@
 
     <h3 th:text="${con.name}"></h3>
     <p th:text="${con.location}"></p>
-    Start Date: <p th:text="${con.date_start}"></p>
-    End Date: <p th:text="${con.date_end}"></p>
+    <span th:text="${#dates.monthNameShort(con.date_start)}"></span>
+    <span th:text="${#dates.day(con.date_start)}"></span>,
+    <span th:text="${#dates.year(con.date_start)}"></span>
+    at <span th:text="${#dates.format(con.date_start, 'hh:mm a')}"></span>
+
+    - <span th:text="${#dates.monthNameShort(con.date_end)}"></span>
+    <span th:text="${#dates.day(con.date_end)}"></span>,
+    <span th:text="${#dates.year(con.date_end)}"></span>
+    at <span th:text="${#dates.format(con.date_end, 'hh:mm a')}"></span>
     <p th:text="${con.phone}"></p>
     <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
     <button id="myButton" class="submit-button" >Add to my List</button>
