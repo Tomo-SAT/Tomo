@@ -48,8 +48,9 @@ public class UsersController {
     }
 
     @GetMapping("/addCon")
-    public String addConPage(Model model){
-//        model.addAttribute("user", new User());
+    public String addConPage(Model model) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("user", user);
         return "users/addCon";
     }
 
