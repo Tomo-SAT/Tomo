@@ -57,7 +57,7 @@ import pics.tomo.tomo.models.User;
 //                e.printStackTrace();
 //                model.addAttribute("message", "Oops! Something went wrong! " + e);
 //            }
-            return "redirect:/users/profile";
+            return "redirect:/profile";
         }
     }
 
