@@ -47,6 +47,17 @@ public class UsersController {
         return "users/profile";
     }
 
+    @GetMapping("/profile/edit")
+    public String showEditProfile(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getId() == 0) {
+            return "redirect:/login";
+        }
+        User profileUser = usersDao.findOne(user.getId());
+        model.addAttribute("user", profileUser);
+        return "users/edit-profile";
+    }
+
     @GetMapping("/addCon")
     public String addConPage(Model model){
 //        model.addAttribute("user", new User());
