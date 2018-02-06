@@ -7,10 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
-import org.thymeleaf.spring4.SpringTemplateEngine;
-import org.thymeleaf.templateresolver.ITemplateResolver;
 import pics.tomo.tomo.services.UserDetailsLoader;
 
 @Configuration
@@ -25,19 +21,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public Java8TimeDialect java8TimeDialect() {
-        return new Java8TimeDialect();
-    }
-
-    @Bean
-    public TemplateEngine templateEngine(ITemplateResolver templateResolver) {
-        SpringTemplateEngine engine = new SpringTemplateEngine();
-        engine.addDialect(new Java8TimeDialect());
-        engine.setTemplateResolver(templateResolver);
-        return engine;
     }
 
     @Override

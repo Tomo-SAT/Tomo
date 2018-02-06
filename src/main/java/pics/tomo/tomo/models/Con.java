@@ -3,7 +3,7 @@ package pics.tomo.tomo.models;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-//import java.time.LocalDateTime;
+//import java.time.LocalDateTime; //if you use this, use #temporals in view
 import java.util.List;
 import java.util.Date;
 
