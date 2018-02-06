@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: my-header('title')">
+</head>
+<body>
+<nav th:include="fragments/navbar :: my-navbar"></nav>
+
+<div class="container">
+    <h1>ADD CON</h1>
+</div>
+<div th:each="con : ${cons}">
+    <ul>
+        <li>
+            <a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>
+            <p th:text="${con.date_start}"></p>
+            <p th:text="${con.date_end}"></p>
+        </li>
+    </ul>
+</div>
+
+    <h2>Friday</h2>
+    <button id="myButton" class="submit-button" >Times</button>
+       <div class="friday">
+           <div class="time1"> 8:00 </div>
+           <div class="time1"> 8:30 </div>
+           <div class="time1"> 9:00 </div>
+           <div class="time1"> 9:30 </div>
+           <div class="time1"> 10:00 </div>
+           <div class="time1"> 10:30 </div>
+           <div class="time1"> 11:00 </div>
+           <div class="time1"> 11:30 </div>
+           <div class="time1"> 12:00 </div>
+           <div class="time1"> 12:30 </div>
+           <div class="time1"> 1:00 </div>
+           <div class="time1"> 1:30 </div>
+           <div class="time1"> 2:00 </div>
+           <div class="time1"> 2:30 </div>
+           <div class="time1"> 3:00 </div>
+           <div class="time1"> 3:30 </div>
+           <div class="time1"> 4:00 </div>
+           <div class="time1"> 4:30 </div>
+           <div class="time1"> 5:00 </div>
+           <div class="time1"> 5:30 </div>
+           <div class="time1"> 6:00 </div>
+           <div class="time1"> 6:30 </div>
+           <div class="time1"> 7:00 </div>
+           <div class="time1"> 7:30 </div>
+           <div class="time1"> 8:00 </div>
+           <div class="time1"> 8:30 </div>
+           <div class="time1"> 9:00 </div>
+           <div class="time1"> 9:30 </div>
+           <div class="time1"> 10:00 </div>
+           <div class="time1"> 10:30 </div>
+       </div>
+
+    <h2>Saturday</h2>
+        <button id="myButton2" class="submit-button" >Times</button>
+        <div class="Saturday">
+            <div class="time2"> 8:00 </div>
+            <div class="time2"> 8:30 </div>
+            <div class="time2"> 9:00 </div>
+            <div class="time2"> 9:30 </div>
+            <div class="time2"> 10:00 </div>
+            <div class="time2"> 10:30 </div>
+            <div class="time2"> 11:00 </div>
+            <div class="time2"> 11:30 </div>
+            <div class="time2"> 12:00 </div>
+            <div class="time2"> 12:30 </div>
+            <div class="time2"> 1:00 </div>
+            <div class="time2"> 1:30 </div>
+            <div class="time2"> 2:00 </div>
+            <div class="time2"> 2:30 </div>
+            <div class="time2"> 3:00 </div>
+            <div class="time2"> 3:30 </div>
+            <div class="time2"> 4:00 </div>
+            <div class="time2"> 4:30 </div>
+            <div class="time2"> 5:00 </div>
+            <div class="time2"> 5:30 </div>
+            <div class="time2"> 6:00 </div>
+            <div class="time2"> 6:30 </div>
+            <div class="time2"> 7:00 </div>
+            <div class="time2"> 7:30 </div>
+            <div class="time2"> 8:00 </div>
+            <div class="time2"> 8:30 </div>
+            <div class="time2"> 9:00 </div>
+            <div class="time2"> 9:30 </div>
+            <div class="time2"> 10:00 </div>
+            <div class="time2"> 10:30 </div>
+        </div>
+
+
+
+
+    <h2>Sunday</h2>
+        <button id="myButton3" class="submit-button" >Times</button>
+        <div class="Sunday">
+            <div class="time3"> 8:00 </div>
+            <div class="time3"> 8:30 </div>
+            <div class="time3"> 9:00 </div>
+            <div class="time3"> 9:30 </div>
+            <div class="time3"> 10:00 </div>
+            <div class="time3"> 10:30 </div>
+            <div class="time3"> 11:00 </div>
+            <div class="time3"> 11:30 </div>
+            <div class="time3"> 12:00 </div>
+            <div class="time3"> 12:30 </div>
+            <div class="time3"> 1:00 </div>
+            <div class="time3"> 1:30 </div>
+            <div class="time3"> 2:00 </div>
+            <div class="time3"> 2:30 </div>
+            <div class="time3"> 3:00 </div>
+            <div class="time3"> 3:30 </div>
+            <div class="time3"> 4:00 </div>
+            <div class="time3"> 4:30 </div>
+            <div class="time3"> 5:00 </div>
+            <div class="time3"> 5:30 </div>
+            <div class="time3"> 6:00 </div>
+            <div class="time3"> 6:30 </div>
+            <div class="time3"> 7:00 </div>
+            <div class="time3"> 7:30 </div>
+            <div class="time3"> 8:00 </div>
+            <div class="time3"> 8:30 </div>
+            <div class="time3"> 9:00 </div>
+            <div class="time3"> 9:30 </div>
+            <div class="time3"> 10:00 </div>
+            <div class="time3"> 10:30 </div>
+        </div>
+
+
+<footer th:include="fragments/footer :: my-footer"></footer>
+</body>
+</html>
