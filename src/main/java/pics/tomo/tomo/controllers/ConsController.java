@@ -27,10 +27,15 @@ public class ConsController {
         return "cons/showCon";
     }
 
-    @GetMapping("/calender")
-    public String calender(Model model)
-    {model.addAttribute("cons",consRepo.findAll());
+    @GetMapping("/cons/calender")
+    public String calender(Model model) {model.addAttribute("cons",consRepo.findAll());
     return "cons/calender";
     }
+
+    @GetMapping("/cons/addCon")
+    public String addCon(Model model) {model.addAttribute("cons",consRepo.findAll());
+        return "cons/addCon";
+    }
+
 
 }
