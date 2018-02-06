@@ -1,7 +1,7 @@
 package pics.tomo.tomo.models;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name="conSchedule")
@@ -20,12 +20,12 @@ public class ConSchedule {
     private Con con;
 
     @Column(nullable = false)
-    private LocalDateTime start_time;
+    private Date start_time;
 
     @Column(nullable = false)
-    private LocalDateTime end_time;
+    private Date end_time;
 
-    public ConSchedule(User user, Con con, LocalDateTime start_time, LocalDateTime end_time) {
+    public ConSchedule(User user, Con con, Date start_time, Date end_time) {
         this.user = user;
         this.con = con;
         this.start_time = start_time;
@@ -56,19 +56,19 @@ public class ConSchedule {
         this.con = con;
     }
 
-    public LocalDateTime getStart_time() {
+    public Date getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(LocalDateTime start_time) {
+    public void setStart_time(Date start_time) {
         this.start_time = start_time;
     }
 
-    public LocalDateTime getEnd_time() {
+    public Date getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(LocalDateTime end_time) {
+    public void setEnd_time(Date end_time) {
         this.end_time = end_time;
     }
 }
