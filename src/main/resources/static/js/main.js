@@ -20,6 +20,8 @@ $(document).ready(function () {
                 url: response.filesUploaded[0].url
             };
             $.post("/profile/image", conImage).done(function(response) {
+                localStorage.clear();
+                window.location.reload(true);
                 window.location = "/profile";
                 // handleFilestack(response);
                 console.log(response)
