@@ -61,6 +61,7 @@ public class UsersController {
     }
 
 
+
     @GetMapping("/search")
     public String search(@RequestParam String q, Model viewModel) {
         viewModel.addAttribute("searchedContent", usersDao.search("%" + q + "%"));
@@ -68,5 +69,6 @@ public class UsersController {
 //        viewModel.addAttribute("cons", consDao.findAll());
         return "users/search";
     }
+
 
 }

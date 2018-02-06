@@ -1,10 +1,13 @@
 package pics.tomo.tomo.controllers;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import pics.tomo.tomo.daos.ConsRepository;
+import pics.tomo.tomo.models.User;
 
 @Controller
 public class ConsController {
@@ -33,22 +36,19 @@ public class ConsController {
     return "cons/calender";
     }
 
-    @GetMapping("/addCon")
-    public String showAddConPage(Model model) {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("user", user);
-        return "cons/addCon";
-    }
+
+
 
     @GetMapping("/cons/calender")
     public String calender(Model model) {model.addAttribute("cons",consRepo.findAll());
     return "cons/calender";
     }
 
-    @GetMapping("/cons/addCon")
-    public String addCon(Model model) {model.addAttribute("cons",consRepo.findAll());
+    @GetMapping("/addCon")
+    public String showAddConPage(Model model) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("user", user);
         return "cons/addCon";
     }
-
 
 }
