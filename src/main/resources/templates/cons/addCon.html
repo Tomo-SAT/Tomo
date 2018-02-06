@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/header :: my-header('addcon')">
+
+<head th:include="fragments/header :: my-header('Add Convention')">
+
 </head>
 <body>
 <nav th:include="fragments/navbar :: my-navbar"></nav>
@@ -8,6 +10,7 @@
 <div class="container">
     <h1>ADD CON</h1>
 </div>
+
 <!--<div th:each="con : ${cons}">-->
     <!--<ul>-->
         <!--<li>-->
@@ -125,6 +128,7 @@
             <!--<div class="time3"> 10:00 PM </div>-->
             <!--<div class="time3"> 10:30 PM </div>-->
         <!--</div>-->
+
 
 
 <footer th:include="fragments/footer :: my-footer"></footer>
