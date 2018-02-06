@@ -16,9 +16,11 @@
                 </div>
 
                 <div id="user-details">
-                    <h4 id="username" th:field="*{user.name}"></h4>
-                    <p id="info" th:field="${user.bio}"></p>
-                    <p th:field="${user.photog}"></p>
+                    <h4> Welcome, <span id="username" th:text="${user.name}"></span>!</h4>
+                    <p id="info" th:text="${user.bio}"></p>
+
+                    <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                    <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
                 </div>
 
                 <!--<div class="social">-->

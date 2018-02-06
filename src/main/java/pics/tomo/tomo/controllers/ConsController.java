@@ -27,6 +27,19 @@ public class ConsController {
         return "cons/showCon";
     }
 
+    @GetMapping("/calender")
+    public String showCalender(Model model)
+    {model.addAttribute("cons",consRepo.findAll());
+    return "cons/calender";
+    }
+
+    @GetMapping("/addCon")
+    public String showAddConPage(Model model) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("user", user);
+        return "cons/addCon";
+    }
+
     @GetMapping("/cons/calender")
     public String calender(Model model) {model.addAttribute("cons",consRepo.findAll());
     return "cons/calender";

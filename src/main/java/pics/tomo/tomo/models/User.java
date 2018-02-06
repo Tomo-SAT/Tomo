@@ -123,4 +123,12 @@ public class User {
 //    public getProfilePic(){
 //        return (featured_picture == true);
 //    }
+
+    public static String translatePhotog(boolean photog) {
+        return photog ? "Yes" : "No";
+    }
+
+    public static String translateCos(boolean cos) {
+        return cos ? "Yes" : "No";
+    }
 }
