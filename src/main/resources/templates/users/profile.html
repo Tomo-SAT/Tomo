@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:include="fragments/header :: my-header('Profile')">
 </head>
 <body>
@@ -7,6 +7,8 @@
 
 <div class="container">
     <main>
+
+        <th:block sec:authorize="isAuthenticated()" th:if="${isOwnProfile}">
         <div class="row">
             <div class="left col-lg-4">
 
@@ -75,6 +77,70 @@
                     <!--</div>-->
                 </div>
             </div>
+        </th:block>
+
+        <th:block th:if="${!isOwnProfile}">
+
+            <div class="row">
+                <div class="left col-lg-4">
+
+                    <div class="avatar">
+                        <div></div>
+                        <div class="active"></div>
+                    </div>
+
+                    <div id="user-details">
+                        <h4> Viewing <span id="username" th:text="${otherUser.name}"></span>'s profile...</h4>
+                        <p id="info" th:text="${otherUser.bio}"></p>
+
+                        <h4>Photographer: <span th:text="${otherUser.photog == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Cosplayer: <span th:text="${otherUser.cos == false ? 'No' : 'Yes'}"></span></h4>
+                    </div>
+
+                    <!--<div class="social">-->
+                    <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
+                    <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
+                    <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
+                    <!--</div>-->
+                </div>
+                <div class="right col-lg-10">
+                    <div clas="cons-container profile-right">
+
+                        <div class="profile-cons">
+                            <!--<li>Past</li>-->
+                            <a id="url" href=""></a>
+                            <h3>Upcoming</h3>
+                        </div>
+                        <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
+                        <br/>
+                        <!--<input type="hidden" id="user-id" th:value="${user.id}"/>-->
+                    </div>
+                    <!--<div class="row gallery">-->
+                    <!--<div class="col-md-4">-->
+                    <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"-->
+                    <!--name="user-image-display"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                    <!--<img src="/img/blank.png" id="img-thumbnail" name="user-image-display"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                    <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                    <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                    <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+
+        </th:block>
+
+
+
+
     </main>
 </div>
 <footer th:include="fragments/footer :: my-footer"></footer>
