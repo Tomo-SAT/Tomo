@@ -22,7 +22,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="/register">Register</a></li>
             <li><a href="/upcomingCons">Upcoming Conventions</a></li>
         </ul>
         <div class="col-sm-3 col-md-3">
@@ -36,21 +35,31 @@
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login">Login</a></li>
+
+            <li sec:authorize="!isAuthenticated()">
+                <li><a href="/register">Register</a></li>
+            </li>
+
+            <li sec:authorize="!isAuthenticated()">
+                <li><a href="/login">Login</a></li>
+            </li>
+
             <li sec:authorize="isAuthenticated()">
                 <a href="/profile">
-                    <span th:text="${#authentication.principal.name}"/>
+                    <span th:text="${#authentication.principal.name}"/>'s Profile
                 </a>
             </li>
-            <li sec:authorize="isAuthenticated()">
-                <a href="/profile/edit">Edit Profile
-                </a>
-            </li>
+
             <li sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" th:method="post">
                     <button class="btn-link btn" style="margin-top: 8px">Logout</button>
                 </form>
             </li>
+
+            <!--<li sec:authorize="isAuthenticated()">-->
+                <!--<a href="/profile/edit">Edit Profile-->
+                <!--</a>-->
+            <!--</li>-->
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>

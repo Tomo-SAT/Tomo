@@ -5,7 +5,7 @@
 <body>
 <nav th:include="fragments/navbar :: my-navbar"></nav>
 
-
+<div class="container">
 <h1>Log In</h1>
 
 <div th:if="${param.error}">
@@ -23,6 +23,7 @@
     <input id="password" name="password" type="password" />
     <input type="submit" value="Log In" />
 </form>
+</div>
 
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>

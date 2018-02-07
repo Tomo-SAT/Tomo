@@ -4,13 +4,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pics.tomo.tomo.daos.ConsRepository;
 import pics.tomo.tomo.daos.UsersRepository;
 import pics.tomo.tomo.models.User;
+import pics.tomo.tomo.services.UsersService;
 
 @Controller
 public class UsersController {
@@ -18,11 +16,13 @@ public class UsersController {
     private UsersRepository usersDao;
     private ConsRepository consDao;
     private PasswordEncoder passwordEncoder;
+    private UsersService userSvc;
 
-    public UsersController(UsersRepository usersDao, ConsRepository consDao, PasswordEncoder passwordEncoder) {
+    public UsersController(UsersRepository usersDao, ConsRepository consDao, PasswordEncoder passwordEncoder, UsersService userSvc) {
         this.usersDao = usersDao;
         this.consDao = consDao;
         this.passwordEncoder = passwordEncoder;
+        this.userSvc = userSvc;
     }
 
     @GetMapping("/register")
@@ -43,17 +43,36 @@ public class UsersController {
         user.setPassword(hash);
 
         usersDao.save(user);
-        return "redirect:/login";
+        userSvc.authenticate(user);
+        return "redirect:/profile";
     }
 
     @GetMapping("/profile")
     public String showProfilePage(Model model) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (user.getId() == 0) {
-            return "redirect:/login";
-        }
-        User profileUser = usersDao.findOne(user.getId());
-        model.addAttribute("user", profileUser);
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        if (user.getId() == 0) {
+//            return "redirect:/login";
+//        }
+        User userLoggedIn = userSvc.loggedInUser(); //grab the loggedInUser from the UsersService and assign them a name, userLoggedIn.
+        User user = usersDao.findById(userLoggedIn.getId());
+
+//        boolean eventsAreEmpty = user.getCons().isEmpty();
+//        model.addAttribute("eventsAreEmpty", eventsAreEmpty);
+
+        model.addAttribute("isOwnProfile", true);
+        model.addAttribute("user", user);
+        return "users/profile";
+    }
+
+    @GetMapping("/profile/{id}")
+    public String showOtherUsersProfile(@PathVariable Long id, Model model) {
+        User user = usersDao.findById(id);
+
+//        boolean eventsAreEmpty = user.getCons().isEmpty();
+//        model.addAttribute("eventsAreEmpty", eventsAreEmpty);
+
+        model.addAttribute("isOwnProfile", userSvc.isLoggedIn() && user.equals(userSvc.loggedInUser()));
+        model.addAttribute("otherUser", user);
         return "users/profile";
     }
 
