@@ -31,14 +31,25 @@
             <div class="right col-lg-10">
                 <div clas="cons-container profile-right">
                     <a href="/profile/edit">Edit Profile</a><br/>
-                    <a id="upload-button"> <img th:src="${user.profilePicture}" /></a>
+                    <img th:src="${user.profilePicture}" />
+
+                    <div class="cn">
+                        <div class="inner">
+                            <a id="upload-button">
+                                <i class="fas fa-pencil-alt large"></i>
+                            </a>
+                        </div>
+                    </div>
+
                     <br/>
-                    <h3>About Me! </h3>
-                    <p id="info" th:text="${user.bio}"></p>
-                    <div class="profile-cons">
+                    <div class="profile-right col-md-4">
+                        <h3>About Me! </h3>
+                        <p id="info" th:text="${user.bio}"></p>
+                        <div class="profile-cons">
                         <!--<li>Past</li>-->
-                        <a id="url" href=""></a>
-                        <h3>Upcoming</h3>
+                            <a id="url" href=""></a>
+                            <h3>Upcoming</h3>
+                        </div>
                     </div>
                     <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
                     <br/>
