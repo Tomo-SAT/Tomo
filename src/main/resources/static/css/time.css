@@ -1,5 +1,5 @@
 .box {
-    background-color: #223333;
+    background-color: slategray;
     color: #ffffff;
     height: 50px;
     width: 100px;
@@ -7,6 +7,8 @@
     top: 100px;
     text-align: center;
     margin: 10px;
+    border-radius: 25px;
+    border: 3px solid #73AD21;
 }
 .time1 {
     border-left: 1px;
