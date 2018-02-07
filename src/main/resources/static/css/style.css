@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css?family=Anton');*/
+
 .resize {
     height: 500px !important;
     width: auto;
@@ -10,7 +10,7 @@
     font-family: 'Anton', sans-serif;
 }
 
-.body {
+body {
     background-color: #cccccc;
 }
 

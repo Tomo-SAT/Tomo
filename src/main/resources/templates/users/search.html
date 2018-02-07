@@ -23,7 +23,7 @@
 <!--</div>-->
 
 <div th:each="user : ${searchedContent}">
-    Username: <a th:href="@{'/profile'}"><span th:text="${user.name}"></span></a>
+    Username: <a th:href="@{/profile/{id}(id=${user.id})}"><span th:text="${user.name}"></span></a>
     <br/>
     Email: <span th:text="${user.email}"></span>
     <br/>
