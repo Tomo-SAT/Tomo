@@ -34,6 +34,9 @@ public class Con {
     @Column(nullable = false)
     private String phone;
 
+    @ManyToOne // many cons can belong to one user
+    private User user;
+
     public String getUrl() {
         return url;
     }
@@ -54,7 +57,7 @@ public class Con {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "con")
     private List<ConSchedule> conSchedule;
 
-    public Con(long id, String name, Date date_start, Date date_end, String location, String url, String phone) {
+    public Con(long id, String name, Date date_start, Date date_end, String location, String url, String phone, User user) {
         this.id = id;
         this.name = name;
         this.date_start = date_start;
@@ -62,6 +65,7 @@ public class Con {
         this.location = location;
         this.url = url;
         this.phone = phone;
+        this.user = user;
     }
 
     public Con() {
@@ -106,5 +110,13 @@ public class Con {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
