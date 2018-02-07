@@ -5,6 +5,10 @@
     width: 100px;
     left: 100px;
     top: 100px;
-    margin-bottom: 30px;
     text-align: center;
+    margin: 10px;
+}
+.time1 {
+    border-left: 1px;
+    border-right: 1px;
 }
