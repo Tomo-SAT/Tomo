@@ -17,7 +17,6 @@
 
                 <div id="user-details">
                     <h4> Welcome, <span id="username" th:text="${user.name}"></span>!</h4>
-                    <p id="info" th:text="${user.bio}"></p>
 
                     <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
                     <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
@@ -33,15 +32,29 @@
                 <div clas="cons-container profile-right">
                     <a href="/profile/edit">Edit Profile</a><br/>
                     <img th:src="${user.profilePicture}" />
-                    <div class="profile-cons">
+
+                    <div class="cn">
+                        <div class="inner">
+                            <a id="upload-button">
+                                <i class="fas fa-pencil-alt large"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <div class="profile-right col-md-4">
+                        <h3>About Me! </h3>
+                        <p id="info" th:text="${user.bio}"></p>
+                        <div class="profile-cons">
                         <!--<li>Past</li>-->
-                        <a id="url" href=""></a>
-                        <h3>Upcoming</h3>
+                            <a id="url" href=""></a>
+                            <h3>Upcoming</h3>
+                        </div>
                     </div>
                     <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
                     <br/>
                     <!--<input type="hidden" id="user-id" th:value="${user.id}"/>-->
-                    <button type="button" class="btn btn-secondary" id="upload-button">Upload</button>
+                    <!--<button type="button" class="btn btn-secondary" id="upload-button">Upload</button>-->
                 </div>
                 <!--<div class="row gallery">-->
                     <!--<div class="col-md-4">-->
