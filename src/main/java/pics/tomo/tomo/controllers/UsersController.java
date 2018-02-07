@@ -4,18 +4,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pics.tomo.tomo.daos.ConsRepository;
 import pics.tomo.tomo.daos.UsersRepository;
 import pics.tomo.tomo.models.User;
-
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class UsersController {
@@ -30,12 +25,6 @@ public class UsersController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/login")
-    public String showLoginForm(Model model) {
-        model.addAttribute("user", new User());
-        return "users/login";
-    }
-
     @GetMapping("/register")
     public String showRegisterForm(Model model) {
         model.addAttribute("user", new User());
@@ -43,7 +32,6 @@ public class UsersController {
     }
 
     @PostMapping("/register")
-    public String saveUser(@ModelAttribute User user) {
     public String register(@ModelAttribute User user,
                            @RequestParam(defaultValue = "false", name="roleCos") boolean roleCosValue,
                            @RequestParam(defaultValue = "false", name="rolePhoto") boolean rolePhotoValue){
@@ -61,6 +49,9 @@ public class UsersController {
     @GetMapping("/profile")
     public String showProfilePage(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getId() == 0) {
+            return "redirect:/login";
+        }
         User profileUser = usersDao.findOne(user.getId());
         model.addAttribute("user", profileUser);
         return "users/profile";
@@ -84,23 +75,13 @@ public class UsersController {
 //        usersDao.save(user);
         User profileUser = usersDao.findOne(user.getId());
 
-        if (user.getPassword().equalsIgnoreCase("")) {
-            String hash = passwordEncoder.encode(user.getPassword());
-            user.setPassword(hash);
-        } else {
-            user.setPassword(profileUser.getPassword());
+        profileUser.setName(user.getName());
+        profileUser.setBio(user.getBio());
+        profileUser.setEmail(user.getEmail());
 
-        }
-            usersDao.save(profileUser);
-            return "redirect:/profile";
+        usersDao.save(profileUser);
+        return "redirect:/profile";
     }
-
-
-    @GetMapping("/addCon")
-    public String addConPage(Model model) {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("user", user);
-        return "users/addCon";
 
 
     @GetMapping("/search")
