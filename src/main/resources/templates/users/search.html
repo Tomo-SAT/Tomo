@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: my-header('title')">
+</head>
+<body>
+<nav th:include="fragments/navbar :: my-navbar"></nav>
+
+<!--<div th:each="con : ${searchedContent}">-->
+    <!--<ul>-->
+        <!--<li>-->
+            <!--<a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>-->
+            <!--Start Date: <span th:text="${#dates.monthNameShort(con.date_start)}"></span>-->
+            <!--<span th:text="${#dates.day(con.date_start)}"></span>,-->
+            <!--<span th:text="${#dates.year(con.date_start)}"></span>-->
+            <!--at <span th:text="${#dates.format(con.date_start, 'hh:mm a')}"></span>-->
+            <!--<br/>-->
+            <!--End Date: <span th:text="${#dates.monthNameShort(con.date_end)}"></span>-->
+            <!--<span th:text="${#dates.day(con.date_end)}"></span>,-->
+            <!--<span th:text="${#dates.year(con.date_end)}"></span>-->
+            <!--at <span th:text="${#dates.format(con.date_end, 'hh:mm a')}"></span>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<div th:each="user : ${searchedContent}">
+    Username: <a th:href="@{'/profile'}"><span th:text="${user.name}"></span></a>
+    <br/>
+    Email: <span th:text="${user.email}"></span>
+    <br/>
+    Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span>
+    Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span>
+    <span th:text="${user.bio}"></span>
+
+</div>
+
+
+
+
+<footer th:include="fragments/footer :: my-footer"></footer>
+</body>
+</html>
