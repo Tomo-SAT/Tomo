@@ -61,6 +61,7 @@ public class User {
         this.password = user.password;
         this.photog = user.photog;
         this.cos = user.cos;
+        this.bio = user.bio;
         this.profilePicture = user.profilePicture;
     }
 

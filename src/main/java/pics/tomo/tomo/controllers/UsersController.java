@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.*;
 import pics.tomo.tomo.daos.UsersRepository;
 import pics.tomo.tomo.models.User;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+
 @Controller
 public class UsersController {
 
@@ -26,13 +30,13 @@ public class UsersController {
 //    }
 
     @GetMapping("/register")
-    public String showRegisterForm(Model model){
+    public String showRegisterForm(Model model) {
         model.addAttribute("user", new User());
         return "users/register";
     }
 
     @PostMapping("/register")
-    public String saveUser(@ModelAttribute User user){
+    public String saveUser(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDao.save(user);
@@ -55,8 +59,27 @@ public class UsersController {
         }
         User profileUser = usersDao.findOne(user.getId());
         model.addAttribute("user", profileUser);
-        return "users/edit-profile";
+        return "users/edit";
     }
+
+    @PostMapping("/profile/edit")
+    public String updateProfile(@ModelAttribute User user) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+////        user.setId(id);
+//        usersDao.save(user);
+        User profileUser = usersDao.findOne(user.getId());
+
+        if (user.getPassword().equalsIgnoreCase("")) {
+            String hash = passwordEncoder.encode(user.getPassword());
+            user.setPassword(hash);
+        } else {
+            user.setPassword(profileUser.getPassword());
+
+        }
+            usersDao.save(profileUser);
+            return "redirect:/profile";
+    }
+
 
     @GetMapping("/addCon")
     public String addConPage(Model model) {
