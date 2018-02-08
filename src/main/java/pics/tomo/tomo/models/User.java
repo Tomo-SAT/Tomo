@@ -40,7 +40,7 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipient")
     private List<Message> messagesReceived;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "creator")
     private List<ConSchedule> conSchedule;
 
     private String profilePicture;
