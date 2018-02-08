@@ -12,7 +12,7 @@
 
 <script th:line="javascript">
     function hideShow1() {
-        var x = document.getElementById("friday");
+        var x = document.getElementById("checkboxesF");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
@@ -20,7 +20,7 @@
         }
     }
     function hideShow2() {
-        var x = document.getElementById("saturday");
+        var x = document.getElementById("checkboxesS");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
@@ -28,7 +28,7 @@
         }
     }
     function hideShow3() {
-        var x = document.getElementById("sunday");
+        var x = document.getElementById("checkboxesSu");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
@@ -37,153 +37,225 @@
     }
 </script>
 
+     <form>
+         <h2>Friday</h2>
+         <button id="myButton" class="HSbtn" onclick="hideShow1()">Times</button>
 
-<!--<div th:each="con : ${cons}">-->
-    <!--<ul>-->
-        <!--<li>-->
-            <!--<a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>-->
-            <!--<p th:text="${con.date_start}"></p>-->
-            <!--<p th:text="${con.date_end}"></p>-->
-        <!--</li>-->
-    <!--</ul>-->
-<!--</div>-->
-    <h2>Friday</h2>
-    <button id="myButton" class="HSbtn" onclick="hideShow1()" >Times</button>
-       <div id="friday" class="friday container">
-           <div class="row">
-               <div class="time1 box col-md-2"> 8:00 AM </div>
-               <div class="time1 box col-md-2"> 8:30 AM </div>
-               <div class="time1 box col-md-2"> 9:00 AM </div>
-               <div class="time1 box col-md-2"> 9:30 AM </div>
-               <div class="time1 box col-md-2"> 10:00 AM </div>
-               <div class="time1 box col-md-2"> 10:30 AM </div>
-           </div>
-           <div class="row">
-               <div class="time1 box col-md-2"> 11:00 AM </div>
-               <div class="time1 box col-md-2"> 11:30 AM </div>
-               <div class="time1 box col-md-2"> 12:00 PM </div>
-               <div class="time1 box col-md-2"> 12:30 PM </div>
-               <div class="time1 box col-md-2"> 1:00 PM </div>
-               <div class="time1 box col-md-2"> 1:30 PM </div>
-           </div>
-           <div class="row">
-               <div class="time1 box col-md-2"> 2:00 PM </div>
-               <div class="time1 box col-md-2"> 2:30 PM </div>
-               <div class="time1 box col-md-2"> 3:00 PM </div>
-               <div class="time1 box col-md-2"> 3:30 PM </div>
-               <div class="time1 box col-md-2"> 4:00 PM </div>
-               <div class="time1 box col-md-2"> 4:30 PM </div>
-           </div>
-               <div class="row">
-               <div class="time1 box col-md-2"> 5:00 PM </div>
-               <div class="time1 box col-md-2"> 5:30 PM </div>
-               <div class="time1 box col-md-2"> 6:00 PM </div>
-               <div class="time1 box col-md-2"> 6:30 PM </div>
-               <div class="time1 box col-md-2"> 7:00 PM </div>
-               <div class="time1 box col-md-2"> 7:30 PM </div>
-           </div>
-           <div class="row">
-               <div class="time1 box col-md-2"> 8:00 PM </div>
-               <div class="time1 box col-md-2"> 8:30 PM </div>
-               <div class="time1 box col-md-2"> 9:00 PM </div>
-               <div class="time1 box col-md-2"> 9:30 PM </div>
-               <div class="time1 box col-md-2"> 10:00 PM </div>
-               <div class="time1 box col-md-2"> 10:30 PM </div>
-           </div>
-       </div>
+            <div id="checkboxesF">
+                <input type="checkbox" name="fGroup" value="1" id="f1" />
+                <label class="whatever" for="f1">8:00 AM</label>
+                <input type="checkbox" name="fGroup" value="2" id="f2" />
+                <label class="whatever" for="f2">8:30 AM</label>
+                <input type="checkbox" name="fGroup" value="3" id="f3" />
+                <label class="whatever" for="f3">9:00 AM</label>
+                <input type="checkbox" name="fGroup" value="4" id="f4" />
+                <label class="whatever" for="f4">9:30 AM</label>
+                <input type="checkbox" name="fGroup" value="5" id="f5" />
+                <label class="whatever" for="f5">10:00 AM</label>
+                <input type="checkbox" name="fGroup" value="6" id="f6" />
+                <label class="whatever" for="f6">10:30 AM</label>
+                <input type="checkbox" name="fGroup" value="7" id="f7" />
+                <label class="whatever" for="f7">11:00 AM</label>
+                <input type="checkbox" name="fGroup" value="8" id="f8" />
+                <label class="whatever" for="f8">11:30 AM</label>
+                <input type="checkbox" name="fGroup" value="9" id="f9" />
+                <label class="whatever" for="f9">12:00 PM</label>
+                <input type="checkbox" name="fGroup" value="10" id="f10" />
+                <label class="whatever" for="f10">12:30 PM</label>
+                <input type="checkbox" name="fGroup" value="11" id="f11" />
+                <label class="whatever" for="f11">1:00 PM</label>
+                <input type="checkbox" name="fGroup" value="12" id="f12" />
+                <label class="whatever" for="f12">1:30 PM</label>
+                <input type="checkbox" name="fGroup" value="13" id="f13" />
+                <label class="whatever" for="f13">2:00 PM</label>
+                <input type="checkbox" name="fGroup" value="14" id="f14" />
+                <label class="whatever" for="f14">2:30 PM</label>
+                <input type="checkbox" name="fGroup" value="15" id="f15" />
+                <label class="whatever" for="f15">3:00 PM</label>
+                <input type="checkbox" name="fGroup" value="16" id="f16" />
+                <label class="whatever" for="f16">3:30 PM</label>
+                <input type="checkbox" name="fGroup" value="17" id="f17" />
+                <label class="whatever" for="f17">4:00 PM</label>
+                <input type="checkbox" name="fGroup" value="18" id="f18" />
+                <label class="whatever" for="f18">4:30 PM</label>
+                <input type="checkbox" name="fGroup" value="19" id="f19" />
+                <label class="whatever" for="f19">5:00 PM</label>
+                <input type="checkbox" name="fGroup" value="20" id="f20" />
+                <label class="whatever" for="f20">5:30 PM</label>
+                <input type="checkbox" name="fGroup" value="21" id="f21" />
+                <label class="whatever" for="f21">6:00 PM</label>
+                <input type="checkbox" name="fGroup" value="22" id="f22" />
+                <label class="whatever" for="f22">6:30 PM</label>
+                <input type="checkbox" name="fGroup" value="23" id="f23" />
+                <label class="whatever" for="f23">7:00 PM</label>
+                <input type="checkbox" name="fGroup" value="24" id="f24" />
+                <label class="whatever" for="f24">7:30 PM</label>
+                <input type="checkbox" name="fGroup" value="25" id="f25" />
+                <label class="whatever" for="f25">8:00 PM</label>
+                <input type="checkbox" name="fGroup" value="26" id="f26" />
+                <label class="whatever" for="f26">8:30 PM</label>
+                <input type="checkbox" name="fGroup" value="27" id="f27" />
+                <label class="whatever" for="f27">9:00 PM</label>
+                <input type="checkbox" name="fGroup" value="28" id="f28" />
+                <label class="whatever" for="f28">9:30 PM</label>
+                <input type="checkbox" name="fGroup" value="29" id="f29" />
+                <label class="whatever" for="f29">10:00 PM</label>
+                <input type="checkbox" name="fGroup" value="30" id="f30" />
+                <label class="whatever" for="f30">10:30 PM</label>
+                <input type="checkbox" name="fGroup" value="31" id="f31" />
+                <label class="whatever" for="f31">All Day</label>
+                <input type="checkbox" name="fGroup" value="32" id="f32" />
+                <label class="whatever" for="f32">Not Available</label>
+            </div>
+     </form>
 
-    <h2>Saturday</h2>
-        <button id="myButton2" class="HSbtn" onclick="hideShow2()">Times</button>
-        <div id="saturday" class="Saturday container">
-            <div class="row">
-                <div class="time2 box col-md-2"> 8:00 AM </div>
-                <div class="time2 box col-md-2"> 8:30 AM </div>
-                <div class="time2 box col-md-2"> 9:00 AM </div>
-                <div class="time2 box col-md-2"> 9:30 AM </div>
-                <div class="time2 box col-md-2"> 10:00 AM </div>
-                <div class="time2 box col-md-2"> 10:30 AM </div>
+        <form>
+            <h2>Saturday</h2>
+            <button id="myButtonS" class="HSbtn" onclick="hideShow2()" >Times</button>
+
+            <div id="checkboxesS">
+                <input type="checkbox" name="sGroup" value="33" id="s1" />
+                <label class="whatever" for="s1">8:00 AM</label>
+                <input type="checkbox" name="sGroup" value="34" id="s2" />
+                <label class="whatever" for="s2">8:30 AM</label>
+                <input type="checkbox" name="sGroup" value="35" id="s3" />
+                <label class="whatever" for="s3">9:00 AM</label>
+                <input type="checkbox" name="sGroup" value="36" id="s4" />
+                <label class="whatever" for="s4">9:30 AM</label>
+                <input type="checkbox" name="sGroup" value="37" id="s5" />
+                <label class="whatever" for="s5">10:00 AM</label>
+                <input type="checkbox" name="sGroup" value="38" id="s6" />
+                <label class="whatever" for="s6">10:30 AM</label>
+                <input type="checkbox" name="sGroup" value="39" id="s7" />
+                <label class="whatever" for="s7">11:00 AM</label>
+                <input type="checkbox" name="sGroup" value="40" id="s8" />
+                <label class="whatever" for="s8">11:30 AM</label>
+                <input type="checkbox" name="sGroup" value="41" id="s9" />
+                <label class="whatever" for="s9">12:00 PM</label>
+                <input type="checkbox" name="sGroup" value="42" id="s10" />
+                <label class="whatever" for="s10">12:30 PM</label>
+                <input type="checkbox" name="sGroup" value="43" id="s11" />
+                <label class="whatever" for="s11">1:00 PM</label>
+                <input type="checkbox" name="sGroup" value="44" id="s12" />
+                <label class="whatever" for="s12">1:30 PM</label>
+                <input type="checkbox" name="sGroup" value="45" id="s13" />
+                <label class="whatever" for="s13">2:00 PM</label>
+                <input type="checkbox" name="sGroup" value="46" id="s14" />
+                <label class="whatever" for="s14">2:30 PM</label>
+                <input type="checkbox" name="sGroup" value="47" id="s15" />
+                <label class="whatever" for="s15">3:00 PM</label>
+                <input type="checkbox" name="sGroup" value="48" id="s16" />
+                <label class="whatever" for="s16">3:30 PM</label>
+                <input type="checkbox" name="sGroup" value="49" id="s17" />
+                <label class="whatever" for="s17">4:00 PM</label>
+                <input type="checkbox" name="sGroup" value="50" id="s18" />
+                <label class="whatever" for="s18">4:30 PM</label>
+                <input type="checkbox" name="sGroup" value="51" id="s19" />
+                <label class="whatever" for="s19">5:00 PM</label>
+                <input type="checkbox" name="sGroup" value="52" id="s20" />
+                <label class="whatever" for="s20">5:30 PM</label>
+                <input type="checkbox" name="sGroup" value="53" id="s21" />
+                <label class="whatever" for="s21">6:00 PM</label>
+                <input type="checkbox" name="sGroup" value="54" id="s22" />
+                <label class="whatever" for="s22">6:30 PM</label>
+                <input type="checkbox" name="sGroup" value="55" id="s23" />
+                <label class="whatever" for="s23">7:00 PM</label>
+                <input type="checkbox" name="sGroup" value="56" id="s24" />
+                <label class="whatever" for="s24">7:30 PM</label>
+                <input type="checkbox" name="sGroup" value="57" id="s25" />
+                <label class="whatever" for="s25">8:00 PM</label>
+                <input type="checkbox" name="sGroup" value="58" id="s26" />
+                <label class="whatever" for="s26">8:30 PM</label>
+                <input type="checkbox" name="sGroup" value="59" id="s27" />
+                <label class="whatever" for="s27">9:00 PM</label>
+                <input type="checkbox" name="sGroup" value="60" id="s28" />
+                <label class="whatever" for="s28">9:30 PM</label>
+                <input type="checkbox" name="sGroup" value="61" id="s29" />
+                <label class="whatever" for="s29">10:00 PM</label>
+                <input type="checkbox" name="sGroup" value="62" id="s30" />
+                <label class="whatever" for="s30">10:30 PM</label>
+                <input type="checkbox" name="sGroup" value="63" id="s31" />
+                <label class="whatever" for="s31">All Day</label>
+                <input type="checkbox" name="sGroup" value="64" id="s32" />
+                <label class="whatever" for="s32">Not Available</label>
             </div>
-            <div class="row">
-                <div class="time2 box col-md-2"> 11:00 AM </div>
-                <div class="time2 box col-md-2"> 11:30 AM </div>
-                <div class="time2 box col-md-2"> 12:00 PM </div>
-                <div class="time2 box col-md-2"> 12:30 PM </div>
-                <div class="time2 box col-md-2"> 1:00 PM </div>
-                <div class="time2 box col-md-2"> 1:30 PM </div>
-            </div>
-            <div class="row">
-                <div class="time2 box col-md-2"> 2:00 PM </div>
-                <div class="time2 box col-md-2"> 2:30 PM </div>
-                <div class="time2 box col-md-2"> 3:00 PM </div>
-                <div class="time2 box col-md-2"> 3:30 PM </div>
-                <div class="time2 box col-md-2"> 4:00 PM </div>
-                <div class="time2 box col-md-2"> 4:30 PM </div>
-            </div>
-            <div class="row">
-                <div class="time2 box col-md-2"> 5:00 PM </div>
-                <div class="time2 box col-md-2"> 5:30 PM </div>
-                <div class="time2 box col-md-2"> 6:00 PM </div>
-                <div class="time2 box col-md-2"> 6:30 PM </div>
-                <div class="time2 box col-md-2"> 7:00 PM </div>
-                <div class="time2 box col-md-2"> 7:30 PM </div>
-            </div>
-            <div class="row">
-                <div class="time2 box col-md-2"> 8:00 PM </div>
-                <div class="time2 box col-md-2"> 8:30 PM </div>
-                <div class="time2 box col-md-2"> 9:00 PM </div>
-                <div class="time2 box col-md-2"> 9:30 PM </div>
-                <div class="time2 box col-md-2"> 10:00 PM </div>
-                <div class="time2 box col-md-2"> 10:30 PM </div>
-            </div>
-        </div>
+        </form>
 
 
 
+        <form>
+            <h2>Sunday</h2>
+            <button id="myButtonSu" class="HSbtn" onclick="hideShow3()" >Times</button>
 
-    <h2>Sunday</h2>
-        <button id="myButton3" class="HSbtn" onclick="hideShow3()">Times</button>
-        <div id="sunda3" class="Sunday container">
-            <div class="row">
-                <div class="time3 box col-md-2"> 8:00 AM </div>
-                <div class="time3 box col-md-2"> 8:30 AM </div>
-                <div class="time3 box col-md-2"> 9:00 AM </div>
-                <div class="time3 box col-md-2"> 9:30 AM </div>
-                <div class="time3 box col-md-2"> 10:00 AM </div>
-                <div class="time3 box col-md-2"> 10:30 AM </div>
+            <div id="checkboxesSu">
+                <input type="checkbox" name="suGroup" value="65" id="su1" />
+                <label class="whatever" for="su1">8:00 AM</label>
+                <input type="checkbox" name="suGroup" value="66" id="su2" />
+                <label class="whatever" for="su2">8:30 AM</label>
+                <input type="checkbox" name="suGroup" value="67" id="su3" />
+                <label class="whatever" for="su3">9:00 AM</label>
+                <input type="checkbox" name="suGroup" value="68" id="su4" />
+                <label class="whatever" for="su4">9:30 AM</label>
+                <input type="checkbox" name="suGroup" value="69" id="su5" />
+                <label class="whatever" for="su5">10:00 AM</label>
+                <input type="checkbox" name="suGroup" value="70" id="su6" />
+                <label class="whatever" for="su6">10:30 AM</label>
+                <input type="checkbox" name="suGroup" value="71" id="su7" />
+                <label class="whatever" for="su7">11:00 AM</label>
+                <input type="checkbox" name="suGroup" value="72" id="su8" />
+                <label class="whatever" for="su8">11:30 AM</label>
+                <input type="checkbox" name="suGroup" value="73" id="su9" />
+                <label class="whatever" for="su9">12:00 PM</label>
+                <input type="checkbox" name="suGroup" value="74" id="su10" />
+                <label class="whatever" for="su10">12:30 PM</label>
+                <input type="checkbox" name="suGroup" value="75" id="su11" />
+                <label class="whatever" for="su11">1:00 PM</label>
+                <input type="checkbox" name="suGroup" value="76" id="su12" />
+                <label class="whatever" for="su12">1:30 PM</label>
+                <input type="checkbox" name="suGroup" value="77" id="su13" />
+                <label class="whatever" for="su13">2:00 PM</label>
+                <input type="checkbox" name="suGroup" value="78" id="su14" />
+                <label class="whatever" for="su14">2:30 PM</label>
+                <input type="checkbox" name="suGroup" value="79" id="su15" />
+                <label class="whatever" for="su15">3:00 PM</label>
+                <input type="checkbox" name="suGroup" value="80" id="su16" />
+                <label class="whatever" for="su16">3:30 PM</label>
+                <input type="checkbox" name="suGroup" value="81" id="su17" />
+                <label class="whatever" for="su17">4:00 PM</label>
+                <input type="checkbox" name="suGroup" value="82" id="su18" />
+                <label class="whatever" for="su18">4:30 PM</label>
+                <input type="checkbox" name="suGroup" value="83" id="su19" />
+                <label class="whatever" for="su19">5:00 PM</label>
+                <input type="checkbox" name="suGroup" value="84" id="su20" />
+                <label class="whatever" for="su20">5:30 PM</label>
+                <input type="checkbox" name="suGroup" value="85" id="su21" />
+                <label class="whatever" for="su21">6:00 PM</label>
+                <input type="checkbox" name="suGroup" value="86" id="su22" />
+                <label class="whatever" for="su22">6:30 PM</label>
+                <input type="checkbox" name="suGroup" value="87" id="su23" />
+                <label class="whatever" for="su23">7:00 PM</label>
+                <input type="checkbox" name="suGroup" value="88" id="su24" />
+                <label class="whatever" for="su24">7:30 PM</label>
+                <input type="checkbox" name="suGroup" value="89" id="su25" />
+                <label class="whatever" for="su25">8:00 PM</label>
+                <input type="checkbox" name="suGroup" value="90" id="su26" />
+                <label class="whatever" for="su26">8:30 PM</label>
+                <input type="checkbox" name="suGroup" value="91" id="su27" />
+                <label class="whatever" for="su27">9:00 PM</label>
+                <input type="checkbox" name="suGroup" value="92" id="su28" />
+                <label class="whatever" for="su28">9:30 PM</label>
+                <input type="checkbox" name="suGroup" value="93" id="su29" />
+                <label class="whatever" for="su29">10:00 PM</label>
+                <input type="checkbox" name="suGroup" value="94" id="su30" />
+                <label class="whatever" for="su30">10:30 PM</label>
+                <input type="checkbox" name="suGroup" value="95" id="su31" />
+                <label class="whatever" for="su31"> All Day</label>
+                <input type="checkbox" name="suGroup" value="96" id="su32" />
+                <label class="whatever" for="su32"> Not Available</label>
             </div>
-            <div class="row">
-                <div class="time3 box col-md-2"> 11:00 AM </div>
-                <div class="time3 box col-md-2"> 11:30 AM </div>
-                <div class="time3 box col-md-2"> 12:00 PM </div>
-                <div class="time3 box col-md-2"> 12:30 PM </div>
-                <div class="time3 box col-md-2"> 1:00 PM </div>
-                <div class="time3 box col-md-2"> 1:30 PM </div>
-            </div>
-            <div class="row">
-                <div class="time3 box col-md-2"> 2:00 PM </div>
-                <div class="time3 box col-md-2"> 2:30 PM </div>
-                <div class="time3 box col-md-2"> 3:00 PM </div>
-                <div class="time3 box col-md-2"> 3:30 PM </div>
-                <div class="time3 box col-md-2"> 4:00 PM </div>
-                <div class="time3 box col-md-2"> 4:30 PM </div>
-            </div>
-            <div class="row">
-                <div class="time3 box col-md-2"> 5:00 PM </div>
-                <div class="time3 box col-md-2"> 5:30 PM </div>
-                <div class="time3 box col-md-2"> 6:00 PM </div>
-                <div class="time3 box col-md-2"> 6:30 PM </div>
-                <div class="time3 box col-md-2"> 7:00 PM </div>
-                <div class="time3 box col-md-2"> 7:30 PM </div>
-            </div>
-            <div class="row">
-                <div class="time3 box col-md-2"> 8:00 PM </div>
-                <div class="time3 box col-md-2"> 8:30 PM </div>
-                <div class="time3 box col-md-2"> 9:00 PM </div>
-                <div class="time3 box col-md-2"> 9:30 PM </div>
-                <div class="time3 box col-md-2"> 10:00 PM </div>
-                <div class="time3 box col-md-2"> 10:30 PM </div>
-            </div>
-        </div>
+        </form>
+        <!--<input type="submit" value="Submit"/>-->
+
 
 
 

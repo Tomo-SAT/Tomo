@@ -56,8 +56,9 @@ public class UsersController {
         User userLoggedIn = userSvc.loggedInUser(); //grab the loggedInUser from the UsersService and assign them a name, userLoggedIn.
         User user = usersDao.findById(userLoggedIn.getId());
 
-//        boolean eventsAreEmpty = user.getCons().isEmpty();
-//        model.addAttribute("eventsAreEmpty", eventsAreEmpty);
+
+        boolean eventsAreEmpty = consDao.findAllByUserId(user.getId()).isEmpty();
+        model.addAttribute("eventsAreEmpty", eventsAreEmpty);
 
         model.addAttribute("isOwnProfile", true);
         model.addAttribute("user", user);
@@ -68,11 +69,11 @@ public class UsersController {
     public String showOtherUsersProfile(@PathVariable Long id, Model model) {
         User user = usersDao.findById(id);
 
-//        boolean eventsAreEmpty = user.getCons().isEmpty();
-//        model.addAttribute("eventsAreEmpty", eventsAreEmpty);
+        boolean eventsAreEmpty = consDao.findAllByUserId(id).isEmpty();
+        model.addAttribute("eventsAreEmpty", eventsAreEmpty);
 
         model.addAttribute("isOwnProfile", userSvc.isLoggedIn() && user.equals(userSvc.loggedInUser()));
-        model.addAttribute("otherUser", user);
+        model.addAttribute("user", user);
         return "users/profile";
     }
 

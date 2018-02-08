@@ -1,14 +1,39 @@
-.box {
-    background-color: #223333;
-    color: #ffffff;
+.whatever{
+    /*background-color: red;*/
+    /*display: inline-block;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    background-color: slategray;
+    color: #111;
     height: 50px;
     width: 100px;
-    left: 100px;
-    top: 100px;
     text-align: center;
+
     margin: 10px;
+    border-radius: 7px;
+    border: 2px solid #111;
 }
-.time1 {
-    border-left: 1px;
-    border-right: 1px;
+
+#checkboxesF input[type=checkbox]{
+    display: none;
+}
+
+#checkboxesF input[type=checkbox]:checked + .whatever{
+    background-color: green;
+    color: #fff;
+}
+
+#checkboxesS input[type=checkbox]{
+    display: none;
+}
+
+#checkboxesS input[type=checkbox]:checked + .whatever{
+    background-color: green;
+}
+#checkboxesSu input[type=checkbox]{
+    display: none;
+}
+
+#checkboxesSu input[type=checkbox]:checked + .whatever{
+    background-color: green;
 }

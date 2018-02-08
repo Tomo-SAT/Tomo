@@ -9,54 +9,54 @@
     <main>
 
         <th:block sec:authorize="isAuthenticated()" th:if="${isOwnProfile}">
-        <div class="row">
-            <div class="left col-lg-4">
 
-                <div class="avatar">
-                    <div></div>
-                    <div class="active"></div>
-                </div>
+            <div class="row">
+                <div class="left col-lg-4">
 
-                <div id="user-details">
-                    <h4> Welcome, <span id="username" th:text="${user.name}"></span>!</h4>
-
-                    <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
-                    <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
-                </div>
-
-                <!--<div class="social">-->
-                <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
-                <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
-                <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
-                <!--</div>-->
-            </div>
-                <div clas="cons-container profile-right">
-                    <a href="/profile/edit">Edit Profile</a><br/>
-                    <img th:src="${user.profilePicture}" />
-
-                    <div class="cn">
-                        <div class="inner">
-                            <a id="upload-button">
-                                <i class="fas fa-pencil-alt large"></i>
-                            </a>
-                        </div>
+                    <div class="avatar">
+                        <div></div>
+                        <div class="active"></div>
                     </div>
 
-                    <br/>
-                    <div class="profile-right col-md-4">
-                        <h3>About Me! </h3>
-                        <p id="info" th:text="${user.bio}"></p>
-                        <div class="profile-cons">
-                        <!--<li>Past</li>-->
-                            <a id="url" href=""></a>
-                            <h3>Upcoming</h3>
-                        </div>
+                    <div class="user-details">
+                        <h4> Welcome, <span class="username" th:text="${user.name}"></span>!</h4>
+
+                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Email: <span th:text="${user.email}"></span></h4>
                     </div>
+
+                    <!--<div class="social">-->
+                    <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
+                    <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
+                    <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="right col-lg-10">
+                    <div class="cons-container profile-right">
+                        <a href="/profile/edit">Edit Profile</a><br/>
+                        <img th:src="${user.profilePicture}" />
+
+                        <div class="cn">
+                            <div class="inner">
+                                <a id="upload-button">
+                                    <i class="fas fa-pencil-alt large"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <br/>
+                        <div class="profile-right col-md-4">
+                            <h3>About Me! </h3>
+                            <p class="info" th:text="${user.bio}"></p>
+
+                        </div>
                     <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
                     <br/>
                     <!--<input type="hidden" id="user-id" th:value="${user.id}"/>-->
                     <!--<button type="button" class="btn btn-secondary" id="upload-button">Upload</button>-->
-                </div>
+                    </div>
                 <!--<div class="row gallery">-->
                     <!--<div class="col-md-4">-->
                         <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"-->
@@ -74,8 +74,41 @@
                     <!--<div class="col-md-4">-->
                         <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
                     <!--</div>-->
-                </div>
-            </div>
+
+                    <div class="profile-cons">
+                        <!--<li>Past</li>-->
+                        <h3>Upcoming Cons:</h3>
+
+                        <div class="profileConsList" th:each="con : ${user.cons}">
+                            <ul>
+                                <li>
+                                    <!--<h4><a th:href="${'/schedule'}"><span th:text="${con.name}"></span></a></h4>-->
+                                    <h4><span th:text="${con.phone}"></span></h4>
+                                    <h4><span th:text="${con.location}"></span></h4>
+                                    <h4><span th:text="${con.date_start}"></span></h4>
+                                    <h4><span th:text="${con.date_end}"></span></h4>
+
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <a class="btn btn-primary" id="profileConsEditBtn" th:href="${'cons/' + con.id + '/edit'}">
+                                                Edit Event
+                                            </a>
+
+                                            <form th:action="@{'/cons/' + con.id + '/delete'}" method="post">
+                                                <button type="submit" class="btn btn-primary btn-danger" id="profileConsDeleteBtn">
+                                                    Remove Event
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> <!-- end of div column -->
+            </div> <!-- end of div row -->
         </th:block>
 
         <th:block th:if="${!isOwnProfile}">
@@ -88,12 +121,14 @@
                         <div class="active"></div>
                     </div>
 
-                    <div id="user-details">
-                        <h4> Viewing <span id="username" th:text="${otherUser.name}"></span>'s profile...</h4>
-                        <p id="info" th:text="${otherUser.bio}"></p>
+                    <div class="user-details">
+                        <h4> Viewing <span class="username" th:text="${user.name}"></span>'s profile...</h4>
+                        <img th:src="${user.profilePicture}" />
+                        <p class="info" th:text="${user.bio}"></p>
 
-                        <h4>Photographer: <span th:text="${otherUser.photog == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Cosplayer: <span th:text="${otherUser.cos == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Email: <span th:text="${user.email}"></span></h4>
                     </div>
 
                     <!--<div class="social">-->
@@ -106,9 +141,21 @@
                     <div clas="cons-container profile-right">
 
                         <div class="profile-cons">
-                            <!--<li>Past</li>-->
-                            <a id="url" href=""></a>
-                            <h3>Upcoming</h3>
+                                <!--<li>Past</li>-->
+                                <h3>Upcoming Cons:</h3>
+
+                                <div class="profileConsList" th:each="con : ${user.cons}">
+                                    <ul>
+                                        <li>
+                                            <h4><span th:text="${con.name}"></span></h4>
+                                            <h4><span th:text="${con.phone}"></span></h4>
+                                            <h4><span th:text="${con.location}"></span></h4>
+                                            <h4><span th:text="${con.date_start}"></span></h4>
+                                            <h4><span th:text="${con.date_end}"></span></h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
                         <br/>
@@ -131,15 +178,8 @@
                     <!--<div class="col-md-4">-->
                     <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
                     <!--</div>-->
-                </div>
-            </div>
-
-
+            </div> <!-- end of div row -->
         </th:block>
-
-
-
-
     </main>
 </div>
 <footer th:include="fragments/footer :: my-footer"></footer>

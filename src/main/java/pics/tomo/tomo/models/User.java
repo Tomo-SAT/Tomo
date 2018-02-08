@@ -29,6 +29,9 @@ public class User {
     private boolean cos;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Con> cons;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Image> images; //but also has a list of images.
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "creator")
@@ -63,6 +66,7 @@ public class User {
         this.cos = user.cos;
         this.bio = user.bio;
         this.profilePicture = user.profilePicture;
+        this.cons = user.cons;
     }
 
     public long getId() {
@@ -119,6 +123,14 @@ public class User {
 
     public void setCos(boolean cos) {
         this.cos = cos;
+    }
+
+    public List<Con> getCons() {
+        return cons;
+    }
+
+    public void setCons(List<Con> cons) {
+        this.cons = cons;
     }
 
 //    public getProfilePic(){
