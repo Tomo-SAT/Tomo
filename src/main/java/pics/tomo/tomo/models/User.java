@@ -28,8 +28,6 @@ public class User {
     @Column(nullable = false)
     private boolean cos;
 
-
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Con> cons;
 
