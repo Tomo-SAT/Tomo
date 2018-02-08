@@ -1,21 +1,17 @@
-.time1 {
-    border-left: 1px;
-    border-right: 1px;
-}
-
 .whatever{
     /*background-color: red;*/
     /*display: inline-block;*/
     /*width: 100px;*/
     /*height: 100px;*/
     background-color: slategray;
-    color: #ffffff;
+    color: #111;
     height: 50px;
     width: 100px;
     text-align: center;
+
     margin: 10px;
     border-radius: 7px;
-    border: 2px solid #73AD21;
+    border: 2px solid #111;
 }
 
 #checkboxesF input[type=checkbox]{
