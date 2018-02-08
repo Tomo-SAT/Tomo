@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable(); // FIXME: REmove this line
+        http.csrf().disable(); // FIXME: Remove this line
         http
             /* Login configuration */
                 .formLogin()

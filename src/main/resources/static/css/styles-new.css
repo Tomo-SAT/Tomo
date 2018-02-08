@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+    background: #333;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+nav.master {
+    width: 49%;
+    margin: 30px auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: #e7e7e7;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {color: #fff;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background:transparent;color:#fff;}
+
+
+
+h1.massive {
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    position: absolute;
+    top: 34%;
+    width: 100%;
+    font-size: 200px;
+    text-align: center;
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 118%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    overflow: hidden;
+
+}
+
+.fancy-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    background: #17BEBB;
+    outline:10px solid #D4F4EC;
+    opacity: 0.5;
+}
+
+h1.byline {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+h1 a {
+    color: #fff;
+}
+h1 a:hover {
+    color:#fff;
+    cursor: default;
+}
+
+.type {
+    text-decoration:underline;
+}
