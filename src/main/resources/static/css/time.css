@@ -29,6 +29,7 @@
 
 #checkboxesS input[type=checkbox]:checked + .whatever{
     background-color: green;
+    color: #fff;
 }
 #checkboxesSu input[type=checkbox]{
     display: none;
@@ -36,4 +37,5 @@
 
 #checkboxesSu input[type=checkbox]:checked + .whatever{
     background-color: green;
+    color: #fff;
 }
