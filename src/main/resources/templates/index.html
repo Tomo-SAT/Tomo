@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: my-header('Index')">
+</head>
+<body>
+<nav th:include="fragments/navbar :: my-navbar"></nav>
+<!--  Content  -->
+<article class="fancy-border">
+    <h1 class="massive">Tomo.pics</h1>
+    <h1 class="byline">
+        Tomo is for <a href="#" class="typewrite" data-period="2000" data-type='[ "cosplayers.", "photographers." ]'><span class="type"></span></a>
+    </h1>
+</article>
+
+<div class="video">
+    <iframe id="video-background" src="https://player.vimeo.com/video/182765282??background=1autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0#t=00m08s" width="3440" height="1440" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe>
+    <div class="overlay">
+    </div>
+</div>
+
+<!--<nav class="master">-->
+    <!--<nav class="navbar navbar-default" role="navigation">-->
+        <!--&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;-->
+        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li class="active"><a href="/">Home</a></li>-->
+                <!--<li><a href="/register">Register</a></li>-->
+                <!--<li><a href="/upcomingCons">Upcoming Conventions</a></li>-->
+                <!--<li><a href="/login">Login</a></li>-->
+            <!--</ul>-->
+            <!--<div class="col-sm-3 col-md-3 offset-md-3 navbar-right">-->
+                <!--<form method="get" class="navbar-form" role="search" action="/search">-->
+                    <!--<div class="input-group">-->
+                        <!--<input type="text" class="form-control" placeholder="Search" name="q" />-->
+                        <!--<div class="input-group-btn">-->
+                            <!--<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;-->
+    <!--</nav>-->
+<!--</nav>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <footer th:include="fragments/footer :: my-footer"></footer>
+</footer>
+
+</body>
+</html>
