@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import pics.tomo.tomo.daos.ConsRepository;
-import pics.tomo.tomo.models.User;
 
 @Controller
 public class ConsController {

@@ -82,7 +82,7 @@
                         <div class="profileConsList" th:each="con : ${user.cons}">
                             <ul>
                                 <li>
-                                    <h4><span th:text="${con.name}"></span></h4>
+                                    <!--<h4><a th:href="${'/schedule'}"><span th:text="${con.name}"></span></a></h4>-->
                                     <h4><span th:text="${con.phone}"></span></h4>
                                     <h4><span th:text="${con.location}"></span></h4>
                                     <h4><span th:text="${con.date_start}"></span></h4>
@@ -152,21 +152,6 @@
                                             <h4><span th:text="${con.location}"></span></h4>
                                             <h4><span th:text="${con.date_start}"></span></h4>
                                             <h4><span th:text="${con.date_end}"></span></h4>
-
-                                            <div class="row">
-                                                <div class="col-sm">
-                                                    <a class="btn btn-primary" id="profileConsEditBtn" th:href="${'cons/' + con.id + '/edit'}">
-                                                        Edit Event
-                                                    </a>
-
-                                                    <form th:action="@{'/cons/' + con.id + '/delete'}" method="post">
-                                                        <button type="submit" class="btn btn-primary btn-danger" id="profileConsDeleteBtn">
-                                                            Remove Event
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
                                         </li>
                                     </ul>
                                 </div>

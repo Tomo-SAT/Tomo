@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:include="fragments/header :: my-header(${con.name})">
 
 </head>
@@ -22,7 +22,15 @@
     at <span th:text="${#dates.format(con.date_end, 'hh:mm a')}"></span>
     <p th:text="${con.phone}"></p>
     <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
-    <button id="myButton" class="submit-button" >Add to my List</button>
+
+    <div sec:authorize="isAuthenticated()">
+        <a th:href="${'/addCon'}" id="linkToAddCon">Schedule Your Availability</a>
+    </div>
+
+    <div sec:authorize="!isAuthenticated()">
+        <a th:href="${'/login'}" id="linkToRegister">Schedule Your Availability</a>
+    </div>
+
 
     <input type="hidden" id="location" name="location" th:value="${con.location}"/>
 
@@ -38,10 +46,6 @@
 <script th:line="javascript">
 
     "use strict";
-
-    document.getElementById("myButton").onclick = function () {
-        location.href = "/addCon";
-    };
 
     // ============== BUILD MAP
     var mapOptions = {
