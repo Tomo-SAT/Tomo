@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable(); // FIXME: REmove this line
+        http.csrf().disable(); // FIXME: Remove this line
         http
             /* Login configuration */
                 .formLogin()
@@ -47,15 +47,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             /* Pages that can be viewed without having to log in */
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/profile", "/login", "/register", "/profile/{id}") // anyone can see the home and the posts pages
+                .antMatchers("/", "/profile", "/login", "/register", "/profile/{id}", "/upcomingCons") // anyone can see the home and the posts pages
                 .permitAll()
             /* Pages that require authentication */
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-                        "/profile/addCon", // only authenticated users can create posts
                         "/profile/{id}/edit", // only authenticated users can edit posts
-                        "profile/image"
+                        "/profile/{id}/delete",
+                        "profile/image",
+                        "/addCon"
                 )
                 .authenticated()
         ;

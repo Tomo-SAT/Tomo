@@ -12,24 +12,28 @@ public class ConSchedule {
     private long id;
 
     @ManyToOne
-    @JoinColumn (name = "user_id")
-    private User user;
+    @JoinColumn (name = "creator_id")
+    private User creator;
+
+    @ManyToOne
+    @JoinColumn (name = "recipient_id")
+    private User recipient;
 
     @ManyToOne
     @JoinColumn (name = "con_id")
     private Con con;
 
     @Column(nullable = false)
-    private Date start_time;
+    private String  time;
 
     @Column(nullable = false)
-    private Date end_time;
+    private String day;
 
-    public ConSchedule(User user, Con con, Date start_time, Date end_time) {
-        this.user = user;
+    public ConSchedule(User user, Con con, String time, String day) {
+        this.creator = user;
         this.con = con;
-        this.start_time = start_time;
-        this.end_time = end_time;
+        this.time = time;
+        this.day = day;
     }
 
     public long getId() {
@@ -40,13 +44,17 @@ public class ConSchedule {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public User getCreator() {
+        return creator;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCreator(User user) {
+        this.creator = user;
     }
+
+    public User getRecipient(User user) {return this.recipient;}
+
+    public void setRecipient(User user) {this.recipient = user;}
 
     public Con getCon() {
         return con;
@@ -56,19 +64,19 @@ public class ConSchedule {
         this.con = con;
     }
 
-    public Date getStart_time() {
-        return start_time;
+    public String  getTime() {
+        return time;
     }
 
-    public void setStart_time(Date start_time) {
-        this.start_time = start_time;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public Date getEnd_time() {
-        return end_time;
+    public String getDay() {
+        return day;
     }
 
-    public void setEnd_time(Date end_time) {
-        this.end_time = end_time;
+    public void setDay(String day) {
+        this.day = day;
     }
 }

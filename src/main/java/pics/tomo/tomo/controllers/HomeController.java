@@ -12,6 +12,10 @@ public class HomeController {
     public String welcome() {
         return "home";
     }
+    @GetMapping("/index")
+    public String index(){
+        return "/index";
+    }
 
     @GetMapping("/messages")
     public String messages() {
