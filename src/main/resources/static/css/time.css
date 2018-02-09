@@ -3,7 +3,6 @@
     /*display: inline-block;*/
     /*width: 100px;*/
     /*height: 100px;*/
-    background-color: slategray;
     color: #111;
     height: 50px;
     width: 100px;
@@ -21,7 +20,7 @@
 }
 
 #checkboxesF input[type=checkbox]:checked + .whatever{
-    background-color: green;
+    background-color: #ff7cb4;
     color: #fff;
 }
 
@@ -30,7 +29,7 @@
 }
 
 #checkboxesS input[type=checkbox]:checked + .whatever{
-    background-color: green;
+    background-color: #ff7cb4;
     color: #fff;
 }
 #checkboxesSu input[type=checkbox]{
@@ -38,6 +37,6 @@
 }
 
 #checkboxesSu input[type=checkbox]:checked + .whatever{
-    background-color: green;
+    background-color: #ff7cb4;
     color: #fff;
 }
