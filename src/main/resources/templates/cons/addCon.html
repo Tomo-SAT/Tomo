@@ -7,7 +7,7 @@
 <article class="fancy-border">
 <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
-    <div class="container">
+    <div class="container" style="max-height: 700px;overflow: scroll;padding-bottom: 30px;">
         <h1>ADD CON</h1>
 
 
@@ -79,7 +79,7 @@
             <input class="friday" type="checkbox" name="Group" value="F All Day" id="f31"/>
             <label class="whatever" for="f31">All Day</label>
             <input class="friday" type="checkbox" name="Group" value="F Not Available" id="f32"/>
-            <label class="whatever" for="f32">Not Available</label>
+            <label class="whatever" for="f32">N/A</label>
         </div>
 
 
@@ -150,7 +150,7 @@
             <input class="saturday" type="checkbox" name="Group" value="S All Day" id="s31"/>
             <label class="whatever" for="s31">All Day</label>
             <input class="saturday" type="checkbox" name="Group" value="S Not Available" id="s32"/>
-            <label class="whatever" for="s32">Not Available</label>
+            <label class="whatever" for="s32">N/A</label>
         </div>
 
 
@@ -221,7 +221,7 @@
             <input class="sunday" type="checkbox" name="Group" value="U All Day" id="su31"/>
             <label class="whatever" for="su31"> All Day</label>
             <input class="sunday" type="checkbox" name="Group" value="U Not Available" id="su32"/>
-            <label class="whatever" for="su32"> Not Available</label>
+            <label class="whatever" for="su32">N/A</label>
 
             <br/>
         <input type="submit" value="Submit"/>
