@@ -42,10 +42,11 @@ public class ConsController {
     return "cons/calender";
     }
 
-    @GetMapping("/addCon")
-    public String showAddConPage(Model model) {
+    @GetMapping("/addCon/{id}")
+    public String showAddConPage(@PathVariable long id, Model model) {
+        Con con = consRepo.findOne(id);
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("user", user);
+        model.addAttribute("con", con);
         return "cons/addCon";
     }
 
@@ -80,8 +81,7 @@ public class ConsController {
             conSheduleRepository.save(conSchedule);
         }
 
-        return Arrays.toString(times.toArray());
-//        viewmodle.attribute("suGroup", times);
-//        return "user/profile";
+//        return Arrays.toString(times.toArray());
+        return "user/profile";
     }
 }

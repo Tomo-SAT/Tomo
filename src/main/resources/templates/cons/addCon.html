@@ -11,7 +11,7 @@
         <h1>ADD CON</h1>
 
 
-    <form th:action="@{/addCon}" method="post">
+    <form th:action="@{/addCon/{id}(id = ${con.id})}" method="post">
         <h2>Friday</h2>
         <button id="myButton" class="HSbtn">Times</button>
 
@@ -233,6 +233,7 @@
 
     <footer th:include="fragments/footer :: my-footer"></footer>
     <script th:line="javascript">
+
         function hideShow1(e) {
             e.preventDefault();
             var x = document.getElementById("checkboxesF");
