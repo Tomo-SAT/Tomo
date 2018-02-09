@@ -6,7 +6,7 @@
 <article class="fancy-border">
     <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
     <form th:action="@{/register}" method="POST" th:object="${user}">
-        <div class="container">
+        <div class="container" style="max-width:400px;">
             <div class="row">
                 <div class="col-sm-12">
                     <h1>Create an account</h1>
