@@ -23,12 +23,12 @@ a {color: #ff7cb4;}
     top: 0;
     left: 0;
     right: 0;
-    bottom: -188px;
+    bottom: -450px;
     border: 10px solid rgba(255, 255, 255, 0.5);
     margin: 10px;
     background: rgba(255,105,180, 0.5);
-    outline:11px solid rgba(255,105,180, 0.5);
-    border-radius:8px;
+    outline: 11px solid rgba(255,105,180, 0.5);
+    border-radius: 8px;
 }
 
 
