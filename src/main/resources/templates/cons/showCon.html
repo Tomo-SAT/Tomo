@@ -30,8 +30,10 @@
 
     <div sec:authorize="!isAuthenticated()">
         <a th:href="${'/login'}" id="linkToRegister">Schedule Your Availability</a>
-
     </div>
+
+    <input type="hidden" id="location" th:value="${con.location}"/>
+    <div class="container" id="map" style="width: 1065px; height: 470px"></div>
 </div>
 
 </article>
