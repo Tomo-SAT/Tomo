@@ -3,6 +3,7 @@
 <head th:include="fragments/header :: my-header('Edit Profile')">
 </head>
 <body>
+<article class="fancy-border">
 <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 <div class="container">
     <form th:action="@{'/profile/edit'}" method="post" th:object="${user}">
@@ -42,6 +43,7 @@
         </div>
     </form>
 </div>
+</article>
 <footer th:include="fragments/editfooter :: edit-footer"></footer>
 </body>
 </html>

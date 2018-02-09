@@ -3,41 +3,16 @@
 <head th:include="fragments/header :: my-header('Profile')">
 </head>
 <body>
+<article class="fancy-border">
 <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
 <div class="container">
     <main>
-
         <th:block sec:authorize="isAuthenticated()" th:if="${isOwnProfile}">
-
             <div class="row">
-                <div class="left col-lg-4">
-
-                    <div class="avatar">
-                        <div></div>
-                        <div class="active"></div>
-                    </div>
-
-                    <div class="user-details">
-                        <h4> Welcome, <span class="username" th:text="${user.name}"></span>!</h4>
-
-                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Email: <span th:text="${user.email}"></span></h4>
-                    </div>
-
-                    <!--<div class="social">-->
-                    <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
-                    <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
-                    <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
-                    <!--</div>-->
-                </div>
-
-                <div class="right col-lg-10">
+                <div class="col-md-6">
                     <div class="cons-container profile-right">
-                        <a href="/profile/edit">Edit Profile</a><br/>
                         <img th:src="${user.profilePicture}" />
-
                         <div class="cn">
                             <div class="inner">
                                 <a id="upload-button">
@@ -45,36 +20,24 @@
                                 </a>
                             </div>
                         </div>
-
-                        <br/>
-                        <div class="profile-right col-md-4">
-                            <h3>About Me! </h3>
-                            <p class="info" th:text="${user.bio}"></p>
-
-                        </div>
-                    <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
-                    <br/>
-                    <!--<input type="hidden" id="user-id" th:value="${user.id}"/>-->
-                    <!--<button type="button" class="btn btn-secondary" id="upload-button">Upload</button>-->
                     </div>
-                <!--<div class="row gallery">-->
-                    <!--<div class="col-md-4">-->
-                        <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"-->
-                             <!--name="user-image-display"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                        <!--<img src="/img/blank.png" id="img-thumbnail" name="user-image-display"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                        <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                        <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                        <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
-                    <!--</div>-->
-
+                </div> <!-- end of div column -->
+                <div class="col-md-6">
+                    <div class="avatar">
+                        <div></div>
+                        <div class="active"></div>
+                    </div>
+                    <div class="user-details">
+                        <br />
+                        <h4> Welcome, <span class="username" th:text="${user.name}"></span>!</h4>
+                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Email: <span th:text="${user.email}"></span></h4>
+                    </div>
+                    <div class="profile-right">
+                        <h3>About Me! </h3>
+                        <p class="info" th:text="${user.bio}"></p>
+                    </div>
                     <div class="profile-cons">
                         <!--<li>Past</li>-->
                         <h3>Upcoming Cons:</h3>
@@ -106,8 +69,9 @@
                             </ul>
                         </div>
                     </div>
+                </div>
 
-                </div> <!-- end of div column -->
+
             </div> <!-- end of div row -->
         </th:block>
 
@@ -157,31 +121,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"/>-->
                         <br/>
-                        <!--<input type="hidden" id="user-id" th:value="${user.id}"/>-->
                     </div>
-                    <!--<div class="row gallery">-->
-                    <!--<div class="col-md-4">-->
-                    <!--<img src="http://lorempixel.com/g/325/400" class="user-image-display"-->
-                    <!--name="user-image-display"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                    <!--<img src="/img/blank.png" id="img-thumbnail" name="user-image-display"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                    <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                    <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                    <!--<img src="/img/blank.png" alt="200x200" class="img-thumbnail"/>-->
-                    <!--</div>-->
-            </div> <!-- end of div row -->
+            </div>
         </th:block>
     </main>
+    <button class="submit" href="/profile/edit">Edit</button><br/>
 </div>
+</article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
 </html>

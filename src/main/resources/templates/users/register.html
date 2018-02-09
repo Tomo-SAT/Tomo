@@ -3,56 +3,58 @@
 <head th:include="fragments/header :: my-header('Register')">
 </head>
 <body>
-<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
+<article class="fancy-border">
+    <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
+    <form th:action="@{/register}" method="POST" th:object="${user}">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Create an account</h1>
+                </div>
+            </div>
 
-<form th:action="@{/register}" method="POST" th:object="${user}">
-    <div class="container">
-    <h1>Create an account</h1>
-        <label for="name">Name</label>
-        <input id="name" th:field="*{name}" />
-
-        <br />
-
-        <label for="email">Email</label>
-        <input id="email" th:field="*{email}" />
-
-        <br />
-
-        <label for="password">Password</label>
-        <input id="password" type="password" th:field="*{password}" />
-
-        <br />
-        <hr />
-
-
-        <div class="panel panel-default container">
-            <div class="panel-heading">Choose your role:</div>
-
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-info">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="roleCos"/>
-                            Cosplayer
-                        </label>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="name">Name</label>
+                        <input id="name" th:field="*{name}" />
+                        <br />
+                        <label for="email">Email</label>
+                        <input id="email" th:field="*{email}" />
+                        <br />
+                        <label for="password">Password</label>
+                        <input id="password" type="password" th:field="*{password}" />
                     </div>
-                </li>
-                <li class="list-group-item list-group-item-info">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="rolePhoto"/>
-                            Photographer
-                        </label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default container">
+                                <div class="panel-heading">Choose your role:</div>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-info">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="roleCos"/>
+                                                Cosplayer
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item list-group-item-info">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="rolePhoto"/>
+                                                Photographer
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            <input class="submit" value="Sign up!" type="submit" />
+
         </div>
-
-        <input value="Sign up!" type="submit" />
-    </div>
-</form>
-
-
+    </form>
+</article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
 </html>

@@ -1,12 +1,22 @@
 body {
     margin: 0;
     padding: 0;
+    background:transparent url('/img/bg.jpg') no-repeat center center;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+body.index {
+    margin: 0;
+    padding: 0;
     /*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
-    background: #fff;
+    background: #000;
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
 }
+
+a {color: #ff7cb4;}
 
 .fancy-border {
     position: absolute;
@@ -21,6 +31,13 @@ body {
     border-radius:8px;
 }
 
+
+.container {background:#fff;margin-top: 58px;border-radius:8px;}
+
+.panel.panel-default.container {
+    padding: 0;
+    width: 66%;
+}
 
 /* Nav Styles */
 .master-nav {
@@ -37,12 +54,16 @@ body {
 }
 
 
+.navbar-default .navbar-nav>li>a {color: #fff;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background:transparent;color:#fff;}
 
+/*
 .navbar-default .navbar-nav>li>a {color: rgba(255,105,180);}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background:transparent;color: rgba(255,105,180);}
 
 .index .navbar-default .navbar-nav>li>a {color: #fff;}
 .index .navbar-default .navbar-nav>.active>a, .index .navbar-default .navbar-nav>.active>a:focus, .index .navbar-default .navbar-nav>.active>a:hover {background:transparent;color:#fff;}
+*/
 
 
 
@@ -137,4 +158,63 @@ h1 a:hover {
 }
 .home-login a {
     color:#fff;
+}
+
+/** PANELS FIX **/
+.panel {max-width:300px;}
+
+
+
+label {
+    clear: both;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-align: center;
+    margin: 7px 20px 7px 15px;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    clear: both;
+    margin-bottom:10px;
+}
+
+.submit {
+    -webkit-appearance: button;
+    cursor: pointer;
+    color: #ff7cb4;
+    border: solid 1px  rgba(255,105,180,1);
+    border-radius: 8px;
+    margin: 20px auto;
+    display: block;
+    width: 180px;
+    height: 44px;
+    line-height: 30px;
+    font-family: 'Montserrat';
+    font-size: 31px;
+    background: transparent;
+}
+
+.list-group-item-info {
+    color: #ff7cb4;
+    background-color: #fff;
+}
+
+/** Profile Pic Fix */
+.cn {
+    position: absolute;
+    display: table;
+    z-index: 2;
+    opacity: 1;
+    left: 125px;
+    bottom: 10px;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
 }
