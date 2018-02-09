@@ -1,6 +1,7 @@
 package pics.tomo.tomo.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -20,6 +21,7 @@ public class User {
     private String password;
 
     @Column(nullable = true)
+    @Size(max =  1000)
     private String bio;
 
     @Column(nullable = false)
