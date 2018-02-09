@@ -20,7 +20,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 1000)
     @Size(max =  1000)
     private String bio;
 
