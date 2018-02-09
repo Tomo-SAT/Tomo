@@ -42,6 +42,17 @@
     </a>
 </div>
 
+
 <footer th:include="fragments/footer :: my-footer"></footer>
+<script th:line="javascript">
+    var iframe = document.getElementsByTagName('iframe')[0];
+    var player = $f( iframe );
+
+    player.addEvent('ready', function() {
+        player.api('setVolume', 20);
+    });
+
+
+</script>
 </body>
 </html>
