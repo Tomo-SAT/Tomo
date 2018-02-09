@@ -13,9 +13,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-4" th:each="con : ${cons}">
+        <div class="col-lg-4" style="padding:10px;" th:each="con : ${cons}">
             <ul>
-                <li>
+                <li style="list-style:none;">
                     <a th:href="@{/cons/{id}(id=${con.id})}"><h3 th:text="${con.name}"></h3></a>
                     Start Date: <span th:text="${#dates.monthNameShort(con.date_start)}"></span>
                     <span th:text="${#dates.day(con.date_start)}"></span>,
