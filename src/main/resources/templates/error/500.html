@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:include="fragments/header :: my-header('4xx')">
     <title th:text="'Ooops, ' + ${error}"></title>
 </head>
 <body>
-<th:block th:switch="${error}">
-    <div th:case="'Not Found'">
-        <h1>Page not found!!</h1>
+<article class="fancy-border">
+    <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
+    <div class="container">
+            <th:block th:switch="${error}">
+                <div th:case="'Not Found'">
+                    <h1>Page not found!!</h1>
+                </div>
+                <div th:case="'Forbidden'">
+                    <h1>You don't have permission to view this page.</h1>
+                </div>
+            </th:block>
+            <h1>WOW! That's embarrassing!</h1>
+            <p>Watch a video instead</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LmhIizQQol0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" ></iframe>
+        <p><a href="/">Or just go back home.</a></p>
     </div>
-    <div th:case="'Forbidden'">
-        <h1>You don't have permission to view this page.</h1>
-    </div>
-</th:block>
-<h1>WOW! That's embarrassing!</h1>
-<p>Watch a video instead</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LmhIizQQol0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" >
-
-</iframe>
+</article>
+<footer th:include="fragments/footer :: my-footer"></footer>
 </body>
 </html>
+
+
+
+
+
