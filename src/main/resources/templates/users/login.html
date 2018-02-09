@@ -3,7 +3,8 @@
 <head th:include="fragments/header :: my-header('Login')">
 </head>
 <body>
-<nav th:include="fragments/navbar :: my-navbar"></nav>
+<article class="fancy-border">
+<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
 <div class="container">
 <h1>Log In</h1>
@@ -21,14 +22,14 @@
     <input id="username" name="username" type="text" />
     <label for="password">Password</label>
     <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" />
+    <input class="submit" type="submit" value="Log In" />
 </form>
 
-    <a th:href="${'/register'}">or Register.</a>
+    <a th:href="${'/register'}">or Register.</a><br />
     <p>By registering, this allows you to connect and schedule with other cosplayers and photographers.</p>
 
 </div>
-
+</article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
 </html>

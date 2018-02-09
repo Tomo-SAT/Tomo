@@ -4,7 +4,8 @@
 
 </head>
 <body>
-<nav th:include="fragments/navbar :: my-navbar"></nav>
+<article class="fancy-border">
+<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
 
 <div class="container">
@@ -29,17 +30,11 @@
 
     <div sec:authorize="!isAuthenticated()">
         <a th:href="${'/login'}" id="linkToRegister">Schedule Your Availability</a>
+
     </div>
-
-
-    <input type="hidden" id="location" name="location" th:value="${con.location}"/>
-
-    <br />
-    <div class="container" id="map" style="height: 470px"></div>
-
 </div>
 
-
+</article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 
 <!-- Custom JS -->

@@ -3,45 +3,42 @@
 <head th:include="fragments/header :: my-header('Edit Profile')">
 </head>
 <body>
-<nav th:include="fragments/navbar :: my-navbar"></nav>
+<article class="fancy-border">
+<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 <div class="container">
     <form th:action="@{'/profile/edit'}" method="post" th:object="${user}">
+        <div class="row">
+            <div class="col-md-6">
+                <lable for="profilePicture"> Profile Picture:</lable>
+                <br />
+                <img th:src="${user.profilePicture}" />
+                <br />
+                <button type="button" class="btn btn-secondary submit" id="upload-button">Upload New Picture</button>
+            </div>
+            <div class="col-md-6">
+                        <lable for="name"> Name:</lable>
+                        <input type="text" class="form-control" id="name" name="cosName" placeholder="Enter name" th:field="*{name}" />
+                        <br />
 
-        <div class="col-xs-12 col-md-6">
-            <a href="/profile">View Profile</a>
+                        <lable for="bio"> Bio:</lable>
+                        <textarea class="form-control" id="bio" name="bio" placeholder="Tell us about yourself!" th:field="*{bio}" />
+                        <br/>
 
-            <div class="form-row">
+                        <lable for="email"> Email:</lable>
+                        <input type="text" class="form-control" id="email" name="email" th:field="*{email}" />
 
-                <div class="col-xs-12 col-md-6">
-
-                    <lable for="profilePicture"> Profile Picture:</lable>
-                    <img th:src="${user.profilePicture}" />
-                    <button type="button" class="btn btn-secondary" id="upload-button">Upload</button>
-                    <br />
-
-                    <lable for="name"> Name:</lable>
-                    <input type="text" class="form-control" id="name" name="cosName" placeholder="Enter name" th:field="*{name}" />
-                    <br />
-
-                    <lable for="bio"> Bio:</lable>
-                    <textarea class="form-control" id="bio" name="bio" placeholder="Tell us about yourself!" th:field="*{bio}" />
-                    <br/>
-
-                    <lable for="email"> Email:</lable>
-                    <input type="text" class="form-control" id="email" name="email" th:field="*{email}" />
-
-                    <input type="hidden" id="id" name="id" th:field="*{id}" />
-                    <input type="hidden" id="photog" name="photog" th:field="*{photog}" />
-                    <input type="hidden" id="cos" name="cos" th:field="*{cos}" />
-                    <input type="hidden" id="password" name="password" th:field="*{password}" />
-
-                    <br />
-                    <input type="submit" />
-                </div>
+                        <input type="hidden" id="id" name="id" th:field="*{id}" />
+                        <input type="hidden" id="photog" name="photog" th:field="*{photog}" />
+                        <input type="hidden" id="cos" name="cos" th:field="*{cos}" />
+                        <input type="hidden" id="password" name="password" th:field="*{password}" />
+                        <br />
+                        <input class="submit" type="submit" />
+                        <a href="/profile">Back to Profile</a>
             </div>
         </div>
     </form>
 </div>
+</article>
 <footer th:include="fragments/editfooter :: edit-footer"></footer>
 </body>
 </html>
