@@ -23,8 +23,11 @@ public class HomeController {
     }
 
     @GetMapping("/display")
-    public String display() {
-        return "/users/display";
-    }
+    public String display() { return "/users/display"; }
+
+    @GetMapping("/about")
+    public String about() {return "about";}
+
+
 
 }
