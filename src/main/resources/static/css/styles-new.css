@@ -1,9 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background:transparent url('/img/bg.jpg') no-repeat center center;
     font-family: 'Montserrat', sans-serif;
-    background-position: top;
+    /*background-position: top;*/
     text-align: center;
 }
 
@@ -24,11 +23,11 @@ a {color: #ff7cb4;}
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -188px;
     border: 10px solid rgba(255, 255, 255, 0.5);
     margin: 10px;
     background: rgba(255,105,180, 0.5);
-    outline:10px solid rgba(255,105,180, 0.5);
+    outline:11px solid rgba(255,105,180, 0.5);
     border-radius:8px;
 }
 
@@ -224,18 +223,17 @@ button, input, select, textarea {
 /* Tweaks */
 
 
-
 h2.logo {
     color: #fff;
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
-    width: 100%;
+    width: 200px;
     font-size: 200px;
     text-align: left;
     -ms-transform: rotate(-25deg);
     -webkit-transform: rotate(-25deg);
     transform: rotate(-25deg);
-    top: -149px;
+    top: 0px;
     left: -89px;
     font-size: 75px;
     position: relative;
@@ -252,7 +250,7 @@ h2 a:hover {color:#fff;text-decoration:none;}
     color:rgb(255,105,180);
     text-align: center;
     width:100%;
-    height:30px;
+    height:55px;
     line-height:30px;
     position:fixed;
     bottom:0;
@@ -263,14 +261,13 @@ h2 a:hover {color:#fff;text-decoration:none;}
 
 /* Checkboxes Fix */
 .whatever {
-    background-color: slategray;
-    color: #111;
+    color: #ff7cb4;
     width: 100px;
     text-align: center;
     margin: 10px;
     border-radius: 7px;
-    border: 2px solid #111;
-    color: #fff;
+    border: solid 1px rgba(255,105,180,1);
+    background-color: #fff;
     clear: none;
     width: 100px;
     display: inline-block;

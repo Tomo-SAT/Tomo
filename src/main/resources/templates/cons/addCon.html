@@ -10,10 +10,9 @@
     <div class="container" style="max-height: 700px;overflow: scroll;padding-bottom: 30px;">
         <h1>ADD CON</h1>
 
-
     <form th:action="@{/addCon/{id}(id = ${con.id})}" method="post">
         <h2>Friday</h2>
-        <button id="myButton" class="HSbtn">Times</button>
+        <button id="myButton" class="HSbtn animated bounce">Times</button>
 
         <div id="checkboxesF">
             <input class="friday" type="checkbox" name="Group" value="F 8:00AM" id="f1"/>
@@ -83,8 +82,8 @@
         </div>
 
 
-        <h2>Saturday</h2>
-        <button id="myButtonS" class="HSbtn" onclick="hideShow2()">Times</button>
+        <h2 class="animated bounce">Saturday</h2>
+        <button id="myButtonS" class="HSbtn collapsible popout" data-collapsible="accordion" onclick="hideShow2()">Times</button>
 
         <div id="checkboxesS">
             <input class="saturday" type="checkbox" name="Group" value="S 8:00AM" id="s1"/>
@@ -154,8 +153,8 @@
         </div>
 
 
-        <h2>Sunday</h2>
-        <button id="myButtonSu" class="HSbtn">Times</button>
+        <h2 class="animated bounce">Sunday</h2>
+        <button id="myButtonSu" class="HSbtn collapsible popout" data-collapsible="accordion">Times</button>
 
         <div id="checkboxesSu">
             <input class="sunday" type="checkbox" name="Group" value="U 8:00AM" id="su1"/>
@@ -224,8 +223,9 @@
             <label class="whatever" for="su32">N/A</label>
 
             <br/>
-        <input type="submit" value="Submit"/>
         </div>
+        <br/>
+        <input type="submit" value="Submit"/>
     </form>
     </div>
 </article>
