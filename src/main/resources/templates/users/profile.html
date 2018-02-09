@@ -21,6 +21,7 @@
                             </div>
                         </div>
                     </div>
+                    <a class="submit" href="/profile/edit">Edit</a><br/>
                 </div> <!-- end of div column -->
                 <div class="col-md-6">
                     <div class="avatar">
@@ -104,10 +105,8 @@
                 <div class="right col-lg-10">
                     <div clas="cons-container profile-right">
 
-                        <div class="profile-cons">
-                                <!--<li>Past</li>-->
+                            <div class="profile-cons">
                                 <h3>Upcoming Cons:</h3>
-
                                 <div class="profileConsList" th:each="con : ${user.cons}">
                                     <ul>
                                         <li>
@@ -120,13 +119,27 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="btn btn-primary" id="profileConsEditBtn" th:href="${'cons/' + con.id + '/edit'}">
+                                    Edit Event
+                                </a>
+
+                                <form th:action="@{'/cons/' + con.id + '/delete'}" method="post">
+                                    <button type="submit" class="btn btn-primary btn-danger" id="profileConsDeleteBtn">
+                                        Remove Event
+                                    </button>
+                                </form>
+                            </div>
                         <br/>
                     </div>
-            </div>
+                </div>
+             </div>
+          </div>
         </th:block>
     </main>
-    <a class="submit" href="/profile/edit">Edit</a><br/>
+
 </div>
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
