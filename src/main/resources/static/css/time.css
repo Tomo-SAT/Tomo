@@ -10,8 +10,10 @@
     text-align: center;
 
     margin: 10px;
+
     border-radius: 7px;
     border: 2px solid #111;
+
 }
 
 #checkboxesF input[type=checkbox]{

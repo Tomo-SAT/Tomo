@@ -4,42 +4,45 @@
 
 </head>
 <body>
-<nav th:include="fragments/navbar :: my-navbar"></nav>
+<article class="fancy-border">
+<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
 
 <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 th:text="${con.name}"></h3>
+            <p th:text="${con.location}"></p>
+            <span th:text="${#dates.monthNameShort(con.date_start)}"></span>
+            <span th:text="${#dates.day(con.date_start)}"></span>,
+            <span th:text="${#dates.year(con.date_start)}"></span>
+            at <span th:text="${#dates.format(con.date_start, 'hh:mm a')}"></span>
 
-    <h3 th:text="${con.name}"></h3>
-    <p th:text="${con.location}"></p>
-    <span th:text="${#dates.monthNameShort(con.date_start)}"></span>
-    <span th:text="${#dates.day(con.date_start)}"></span>,
-    <span th:text="${#dates.year(con.date_start)}"></span>
-    at <span th:text="${#dates.format(con.date_start, 'hh:mm a')}"></span>
+            - <span th:text="${#dates.monthNameShort(con.date_end)}"></span>
+            <span th:text="${#dates.day(con.date_end)}"></span>,
+            <span th:text="${#dates.year(con.date_end)}"></span>
+            at <span th:text="${#dates.format(con.date_end, 'hh:mm a')}"></span>
+            <p th:text="${con.phone}"></p>
+            <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
 
-    - <span th:text="${#dates.monthNameShort(con.date_end)}"></span>
-    <span th:text="${#dates.day(con.date_end)}"></span>,
-    <span th:text="${#dates.year(con.date_end)}"></span>
-    at <span th:text="${#dates.format(con.date_end, 'hh:mm a')}"></span>
-    <p th:text="${con.phone}"></p>
-    <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
+            <div sec:authorize="isAuthenticated()">
+                <a th:href="${'/addCon'}" id="linkToAddCon">Schedule Your Availability</a>
+            </div>
 
-    <div sec:authorize="isAuthenticated()">
-        <a th:href="${'/addCon'}" id="linkToAddCon">Schedule Your Availability</a>
+            <div sec:authorize="!isAuthenticated()">
+                <a th:href="${'/login'}" id="linkToRegister">Schedule Your Availability</a>
+            </div>
+
+
+            <input type="hidden" id="location" name="location" th:value="${con.location}"/>
+
+            <br />
+            <div class="container" id="map" style="height: 470px"></div>
+        </div>
     </div>
-
-    <div sec:authorize="!isAuthenticated()">
-        <a th:href="${'/login'}" id="linkToRegister">Schedule Your Availability</a>
-    </div>
-
-
-    <input type="hidden" id="location" name="location" th:value="${con.location}"/>
-
-    <br />
-    <div class="container" id="map" style="height: 470px"></div>
-
 </div>
 
-
+</article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 
 <!-- Custom JS -->

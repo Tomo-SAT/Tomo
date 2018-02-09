@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String welcome() {
         return "home";
     }
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index(){
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/messages")
