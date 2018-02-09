@@ -10,7 +10,7 @@
         <h1>ADD CON</h1>
     </div>
 
-    <form th:action="@{/addCon}" method="post">
+    <form th:action="@{/addCon/{id}(id = ${con.id})}" method="post">
         <h2>Friday</h2>
         <button id="myButton" class="HSbtn">Times</button>
 

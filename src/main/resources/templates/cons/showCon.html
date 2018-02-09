@@ -24,7 +24,7 @@
     <a th:href="${'http://' + con.url}" target="_blank"><p th:text="${con.url}"></p></a>
 
     <div sec:authorize="isAuthenticated()">
-        <a th:href="${'/addCon'}" id="linkToAddCon">Schedule Your Availability</a>
+        <a th:href="${'/addCon/' + con.id}" id="linkToAddCon">Schedule Your Availability</a>
     </div>
 
     <div sec:authorize="!isAuthenticated()">
