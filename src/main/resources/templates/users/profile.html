@@ -91,9 +91,6 @@
                         <img th:src="${user.profilePicture}" />
                         <p class="info" th:text="${user.bio}"></p>
 
-                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Email: <span th:text="${user.email}"></span></h4>
                     </div>
 
                     <!--<div class="social">-->
@@ -105,6 +102,9 @@
                 <div class="right col-md-6">
                     <div class="cons-container profile-right">
 
+                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                        <h4>Email: <span th:text="${user.email}"></span></h4>
                             <div class="profile-cons">
                                 <h3>Upcoming Cons:</h3>
                                 <div class="profileConsList" th:each="con : ${user.cons}">
