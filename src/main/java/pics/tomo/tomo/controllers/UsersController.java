@@ -123,5 +123,11 @@ public class UsersController {
         return "users/search";
     }
 
+    @GetMapping("/booking")
+    public String showBookingForm(Model model) {
+        model.addAttribute("user", new User());
+        return "users/booking";
+    }
+
 
 }
