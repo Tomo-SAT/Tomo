@@ -111,9 +111,7 @@ public class User {
         this.bio = bio;
     }
 
-    public boolean isPhotog() {
-        return photog;
-    }
+    public boolean isPhotog() { return photog; }
 
     public void setPhotog(boolean photog) {
         this.photog = photog;
