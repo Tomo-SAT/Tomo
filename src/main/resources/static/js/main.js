@@ -29,8 +29,3 @@ $(document).ready(function () {
         });
     }
 });
-
-
-
-
-
