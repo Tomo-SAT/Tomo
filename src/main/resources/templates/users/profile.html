@@ -4,128 +4,157 @@
 </head>
 <body>
 <article class="fancy-border">
-<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
+    <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
-<div class="container">
-    <main>
-        <th:block sec:authorize="isAuthenticated()" th:if="${isOwnProfile}">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="cons-container profile-right">
-                        <img th:src="${user.profilePicture}" />
-                        <div class="cn">
-                            <div class="inner">
-                                <!--<a id="upload-button">-->
+    <div class="container">
+        <main>
+            <th:block sec:authorize="isAuthenticated()" th:if="${isOwnProfile}">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="cons-container profile-right">
+                            <img th:src="${user.profilePicture}"/>
+                            <div class="cn">
+                                <div class="inner">
+                                    <!--<a id="upload-button">-->
                                     <!--<i class="fas fa-pencil-alt large"></i>-->
-                                <!--</a>-->
+                                    <!--</a>-->
+                                </div>
+                            </div>
+                        </div>
+                        <a class="submit" href="/profile/edit">Edit</a><br/>
+                    </div> <!-- end of div column -->
+                    <div class="col-md-6">
+                        <div class="avatar">
+                            <div></div>
+                            <div class="active"></div>
+                        </div>
+                        <div class="user-details">
+                            <br/>
+                            <h4>Hello, <span class="username" th:text="${user.name}"></span>!</h4> Welcome!
+                            <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                            <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                            <h4>Email: <span th:text="${user.email}"></span></h4>
+                        </div>
+                        <div class="profile-right">
+                            <h3>About Me! </h3>
+                            <p class="info" th:text="${user.bio}"></p>
+                        </div>
+                        <div class="profile-cons">
+                            <!--<li>Past</li>-->
+                            <h3>Upcoming Cons:</h3>
+
+                            Needed: List of cons attending by user.
+                            Needed: Within each con, dates and times the user is attending.
+
+                            <div class="profileConsList" th:each="con : ${cons}">
+                                <ul>
+                                    <li>
+                                        <h4><span th:text="${con.name}"></span></h4>
+
+
+                                        <div class="list" th:each="schedule : ${consSchedule}">
+                                            <ul>
+                                                <li>
+                                                    <h4><span th:text="${schedule.day}"></span></h4>
+                                                    <h4><span th:text="${schedule.time}"></span></h4>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <a class="btn btn-primary profileConsEditBtn"
+                                                   th:href="${'cons/' + con.id + '/edit'}">
+                                                    Edit Event
+                                                </a>
+
+                                                <form th:action="@{'/cons/' + con.id + '/delete'}" method="post">
+                                                    <button type="submit"
+                                                            class="btn btn-primary btn-danger profileConsDeleteBtn">
+                                                        Remove Event
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="list" th:each="schedule : ${consSchedule}">
+                                <ul>
+                                    <li>
+                                        <h4><span th:text="${schedule.day}"></span></h4>
+                                        <h4><span th:text="${schedule.time}"></span></h4>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <a class="submit" href="/profile/edit">Edit</a><br/>
-                </div> <!-- end of div column -->
-                <div class="col-md-6">
-                    <div class="avatar">
-                        <div></div>
-                        <div class="active"></div>
-                    </div>
-                    <div class="user-details">
-                        <br />
-                        <h4>Hello, <span class="username" th:text="${user.name}"></span>!</h4> Welcome!
-                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Email: <span th:text="${user.email}"></span></h4>
-                    </div>
-                    <div class="profile-right">
-                        <h3>About Me! </h3>
-                        <p class="info" th:text="${user.bio}"></p>
-                    </div>
-                    <div class="profile-cons">
-                        <!--<li>Past</li>-->
-                        <h3>Upcoming Cons:</h3>
 
-                        <div class="profileConsList" th:each="con : ${user.cons}">
-                            <ul>
-                                <li>
-                                    <!--<h4><a th:href="${'/schedule'}"><span th:text="${con.name}"></span></a></h4>-->
-                                    <h4><span th:text="${con.phone}"></span></h4>
-                                    <h4><span th:text="${con.location}"></span></h4>
-                                    <h4><span th:text="${con.date_start}"></span></h4>
-                                    <h4><span th:text="${con.date_end}"></span></h4>
 
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <a class="btn btn-primary profileConsEditBtn" th:href="${'cons/' + con.id + '/edit'}">
-                                                Edit Event
-                                            </a>
+                </div> <!-- end of div row -->
+            </th:block>
 
-                                            <form th:action="@{'/cons/' + con.id + '/delete'}" method="post">
-                                                <button type="submit" class="btn btn-primary btn-danger profileConsDeleteBtn">
-                                                    Remove Event
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
+            <p th:text="${isOwnProfile}"></p>
 
-                                </li>
-                            </ul>
+            <th:block th:if="${!isOwnProfile}">
+
+                <div class="row">
+                    <div class="left col-lg-4">
+
+                        <div class="avatar">
+                            <div></div>
+                            <div class="active"></div>
                         </div>
+
+                        <div class="user-details">
+                            <h4>Viewing <span class="username" th:text="${user.name}"></span>'s profile...</h4>
+                            <img th:src="${user.profilePicture}"/>
+                            <p class="info" th:text="${user.bio}"></p>
+
+                            <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                            <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                            <h4>Email: <span th:text="${user.email}"></span></h4>
+                        </div>
+
+                        <!--<div class="social">-->
+                        <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
+                        <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
+                        <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
+                        <!--</div>-->
                     </div>
-                </div>
-
-
-            </div> <!-- end of div row -->
-        </th:block>
-
-        <th:block th:if="${!isOwnProfile}">
-
-            <div class="row">
-                <div class="left col-lg-4">
-
-                    <div class="avatar">
-                        <div></div>
-                        <div class="active"></div>
-                    </div>
-
-                    <div class="user-details">
-                        <h4>Viewing <span class="username" th:text="${user.name}"></span>'s profile...</h4>
-                        <img th:src="${user.profilePicture}" />
-                        <p class="info" th:text="${user.bio}"></p>
-
-                        <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
-                        <h4>Email: <span th:text="${user.email}"></span></h4>
-                    </div>
-
-                    <!--<div class="social">-->
-                    <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
-                    <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
-                    <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
-                    <!--</div>-->
-                </div>
-                <div class="right col-lg-10">
-                    <div class="cons-container profile-right">
+                    <div class="right col-lg-10">
+                        <div class="cons-container profile-right">
 
                             <div class="profile-cons">
                                 <h3>Upcoming Cons:</h3>
-                                <div class="profileConsList" th:each="con : ${user.cons}">
+
+                                <div class="list" th:each="schedule : ${consSchedule}">
                                     <ul>
                                         <li>
-                                            <h4><span th:text="${con.name}"></span></h4>
-                                            <h4><span th:text="${con.phone}"></span></h4>
-                                            <h4><span th:text="${con.location}"></span></h4>
-                                            <h4><span th:text="${con.date_start}"></span></h4>
-                                            <h4><span th:text="${con.date_end}"></span></h4>
+                                            <h4><span th:text="${schedule.day}"></span></h4>
+                                            <h4><span th:text="${schedule.time}"></span></h4>
                                         </li>
                                     </ul>
+
+                                    <div class="profileConsList" th:each="con : ${cons}">
+                                        <ul>
+                                            <li>
+                                                <h4><span th:text="${con.name}"></span></h4>
+
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-          </div>
-        </th:block>
-    </main>
+            </th:block>
+        </main>
 
-</div>
+    </div>
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>

@@ -10,10 +10,9 @@ import java.util.List;
 
 @Repository
 public interface ConsRepository extends CrudRepository<Con, Long> {
-    Con findById(long id);
 
-    @Query(nativeQuery = true,
-            value = "SELECT * from cons c JOIN users u ON c.user_id = u.id WHERE u.id LIKE ?1")
-    List<Con> findAllByUserId(long id);
+//    @Query(nativeQuery = true,
+//            value = "SELECT * from cons c JOIN users u ON c.user_id = u.id WHERE u.id LIKE ?1")
+    List<Con> findAllById(long id);
 
 }
