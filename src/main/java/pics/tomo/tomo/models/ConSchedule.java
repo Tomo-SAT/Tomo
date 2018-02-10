@@ -36,6 +36,8 @@ public class ConSchedule {
         this.day = day;
     }
 
+    public ConSchedule(){}
+
     public long getId() {
         return id;
     }
