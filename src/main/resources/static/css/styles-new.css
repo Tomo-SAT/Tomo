@@ -274,3 +274,6 @@ h2 a:hover {color:#fff;text-decoration:none;}
     line-height:48px;
     height:50px;
 }
+textarea.form-control {
+    height: 350px;
+}
