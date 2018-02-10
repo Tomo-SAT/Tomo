@@ -37,6 +37,9 @@ public class Con {
     @ManyToOne // many cons can belong to one user
     private User user;
 
+    @Column(nullable = false)
+    private boolean attending;
+
     public String getUrl() {
         return url;
     }
@@ -119,4 +122,8 @@ public class Con {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public boolean isAttending() { return isAttending(); }
+
+    public void setAttending(boolean attending) { this.attending = attending; }
 }

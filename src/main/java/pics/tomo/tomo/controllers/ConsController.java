@@ -5,7 +5,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pics.tomo.tomo.daos.ConSheduleRepository;
+import pics.tomo.tomo.daos.ConScheduleRepository;
 import pics.tomo.tomo.daos.ConsRepository;
 import pics.tomo.tomo.models.Con;
 import pics.tomo.tomo.models.ConSchedule;
@@ -18,10 +18,10 @@ import java.util.List;
 public class ConsController {
 
     private ConsRepository consRepo;
-    private ConSheduleRepository conSheduleRepository;
-    public ConsController(ConsRepository consRepo, ConSheduleRepository conSheduleRepository) {
+    private ConScheduleRepository conScheduleRepository;
+    public ConsController(ConsRepository consRepo, ConScheduleRepository conScheduleRepository) {
         this.consRepo = consRepo;
-        this.conSheduleRepository = conSheduleRepository;
+        this.conScheduleRepository = conScheduleRepository;
     }
 
     @GetMapping("/upcomingCons")
@@ -68,7 +68,6 @@ public class ConsController {
 //    }
 
     @PostMapping("/addCon/{id}")
-    @ResponseBody
     public String saveConSchedule(@PathVariable Long id, @RequestParam(name = "Group")List<String> times) {
         Con con = consRepo.findOne(id);
         User creator = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -78,10 +77,9 @@ public class ConsController {
             String time1 = parts[1];
 
             ConSchedule conSchedule = new ConSchedule(creator, con, time1, day);
-            conSheduleRepository.save(conSchedule);
+            conScheduleRepository.save(conSchedule);
         }
-
 //        return Arrays.toString(times.toArray());
-        return "user/profile";
+        return "redirect:/profile";
     }
 }
