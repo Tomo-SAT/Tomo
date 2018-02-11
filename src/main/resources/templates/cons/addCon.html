@@ -11,7 +11,7 @@
         <div class="title-filter">
             <h1>Schedule your convention!</h1>
         </div>
-    <form th:action="@{/addCon/S{id}(id = ${con.id})}" method="post">
+    <form th:action="@{/addCon/{id}(id = ${con.id})}" method="post">
         <h2>Friday</h2>
         <button id="myButton" class="HSbtn animated bounce">Times</button>
 
