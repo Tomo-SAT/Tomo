@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head th:include="fragments/header :: my-header('4xx')">
+<head th:include="fragments/header :: my-header('Error')">
     <title th:text="'Ooops, ' + ${error}"></title>
 </head>
 <body>
@@ -15,9 +15,10 @@
                 <h1>You don't have permission to view this page.</h1>
             </div>
         </th:block>
-            <p>Watch a video instead</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/LmhIizQQol0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
-        <p><a href="/">Or just go back home.</a></p>
+        <div style="position: relative; height: 0; overflow: hidden; padding-bottom: 56.785714285714%"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="560" height="318" src="//popkey.co/m/dJOAR-anime-sad-pokemon-crying-sweet-pikachu/embed" frameborder="0" scrolling="no"></iframe></div>
+            <!--<p>Watch a video instead</p>-->
+        <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/LmhIizQQol0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>-->
+        <p><a href="/">Just go back home.</a></p>
     </div>
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
