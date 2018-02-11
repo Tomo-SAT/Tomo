@@ -305,3 +305,20 @@ submit{
     line-height:48px;
     height:50px;
 }
+
+
+.title-filter  {
+    background: transparent url(http://www.pageofreviews.com/wp-content/uploads/convention-floor.jpg) no-repeat center;
+    padding: 45px 0;
+    margin: 14px 0;
+}
+
+.title-filter h1 {
+    color: #fff;
+    display: block;
+    background: rgba(133,184,222,.5);
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    margin: 0;
+}
