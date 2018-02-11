@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: my-header('about')">
+</head>
+<body class="body">
+<article class="fancy-border">
+<nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
+
+<div class="container" style="max-height: 760px;padding-bottom: 30px;">
+    <div class="title-filter">
+        <h1>About Us</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="about-pic" src="img/SukariSchutzman9 (1).png" alt="sukari"/>
+            <h2>Sukari What's My Last Name Right Now?</h2>
+            <p>Hey I did this and stuff I am good devloper hey what's this animal in here? I like cheese.</p>
+        </div>
+        <div class="col-md-4">
+            <img class="about-pic" src="img/TerrellsDumbFace.JPG" alt="terrell"/>
+            <h2>Tyrael</h2>
+            <p>When I wear boots I'm still not 6'1" no matter what I like to make people think. I just say that for my dating profile online.</p>
+        </div>
+        <div class="col-md-4">
+            <img class="about-pic" src="img/ashley-cano.png" alt="ashley"/>
+            <h2>Assley</h2>
+            <p>I change my hair like I change my clothes and I'm clearly super fickle. One time I met a friend and decided that I didn't like them and went to the store to change my hair again so they wouldn't recognize me and then I just kept doing it and my parents forgot to pick me up from the dollar general where I got the hair color so I grew up wolves for the next 14 years and then I ended up in Code Up where I met the other two people on this project who am I?</p>
+        </div>
+    </div>
+</div>
+</article>
+<footer th:include="fragments/footer :: my-footer"></footer>
+</body>
+</html>
