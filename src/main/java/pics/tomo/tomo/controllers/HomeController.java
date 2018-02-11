@@ -25,6 +25,9 @@ public class HomeController {
     @GetMapping("/display")
     public String display() { return "/users/display"; }
 
+    @GetMapping("/about-fun")
+    public String aboutFun() {return "about-fun";}
+
     @GetMapping("/about")
     public String about() {return "about";}
 

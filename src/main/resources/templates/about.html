@@ -4,12 +4,51 @@
 </head>
 <body class="body">
 <article class="fancy-border">
+    <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
-<h1 class="title">about</h1>
-
-<nav th:include="fragments/navbar :: my-navbar"></nav>
-
-
+    <div class="container" style="max-height: 820px;padding-bottom: 30px;">
+        <div class="title-filter">
+            <h1>About Us</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img class="about-pic" src="img/SukariSchutzman9 (1).png" alt="sukari"/>
+                <h2>Sukari Schutzman</h2>
+                <hr/>
+                <p>A full stack web developer who has an objective to further her career
+                    in the area of technology and information services via modern-day methodologies
+                    such as Agile, Scrum and traditional project management. Constantly thinking
+                    out loud, never in a box.</p>
+                    <p><i class="fab fa-github"><a href="https://github.com/sschutzman" target="_blank"> GitHub</a></i></p>
+                    <p><i class="far fa-envelope"><a href="mailto: sukari.r.jackson@gmail.com"> Email</a></i></p>
+                    <p><i class="fab fa-linkedin-in"><a href="https://www.linkedin.com/in/sukari-schutzman/" target="_blank"> LinkedIn</a></i></p>
+            </div>
+            <div class="col-md-4">
+                <img class="about-pic" src="img/TerrellsDumbFace.JPG" alt="terrell"/>
+                <h2>Terrell Stewart</h2>
+                <hr/>
+                <p>Experienced Web-Developer with a demonstrated history of working with
+                    multiple languages. Skilled in Javascript, Java, WordPress, MySQL,
+                    And Bootstrap. I am Easily Adaptable, a team player , and a Critical Thinker.</p>
+                <p><i class="fab fa-github"><a href="https://github.com/Terrellstewart0" target="_blank"> GitHub</a></i></p>
+                <p><i class="far fa-envelope"><a href="mailto: terrellstewart0@gmail.com"> Email</a></i></p>
+                <p><i class="fab fa-linkedin-in"><a href="https://www.linkedin.com/in/tstewart0/" target="_blank"> LinkedIn</a></i></p>
+            </div>
+            <div class="col-md-4">
+                <img class="about-pic" src="img/ashley-cano.png" alt="ashley"/>
+                <h2>Ashley Cano</h2>
+                <hr/>
+                <p>With a background in graphic design, I'm confident that I can deliver an
+                    excellent UI experience within the presentation layer. As a software
+                    developer, I have an affinity for the backend work implemented on web
+                    applications and can rely on my technical acumen to lend value.</p>
+                <p><i class="fab fa-github"><a href="https://github.com/ash-cano" target="_blank"> GitHub</a></i></p>
+                <p><i class="far fa-envelope"><a href="mailto: ash.r.cano@gmail.com"> Email</a></i></p>
+                <p><i class="fab fa-linkedin-in"><a href="https://www.linkedin.com/in/ashley-cano/" target="_blank"> LinkedIn</a></i></p>
+            </div>
+        </div>
+    </div>
+</article>
 <footer th:include="fragments/footer :: my-footer"></footer>
 </body>
 </html>
