@@ -125,5 +125,6 @@ public class Con {
 
     public boolean isAttending() { return isAttending(); }
 
-    public void setAttending(boolean attending) { this.attending = attending; }
+    public void setAttending(boolean attending) { this.attending = attending;
+    }
 }

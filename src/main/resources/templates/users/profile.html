@@ -40,6 +40,7 @@
                             <p class="info" th:text="${user.bio}"></p>
                         </div>
                         <div class="profile-cons">
+
                             <!--<li>Past</li>-->
                             <h3>Upcoming Cons:</h3>
 
@@ -47,18 +48,15 @@
                             Needed: Within each con, dates and times the user is attending.
 
                             <div class="profileConsList" th:each="con : ${cons}">
-                                <ul>
-                                    <li>
-                                        <h4><span th:text="${con.name}"></span></h4>
+
+                                        <h5><span style="font-size: 24px;" th:text="${con.name}"></span></h5>
 
 
                                         <div class="list" th:each="schedule : ${consSchedule}">
-                                            <ul>
-                                                <li>
-                                                    <h4><span th:text="${schedule.day}"></span></h4>
-                                                    <h4><span th:text="${schedule.time}"></span></h4>
-                                                </li>
-                                            </ul>
+
+                                                    <span th:text="${schedule.day}"></span>
+                                                    <span th:text="${schedule.time}"></span>
+
                                         </div>
 
                                         <!--<div class="row">-->
@@ -76,19 +74,18 @@
                                                 <!--</form>-->
                                             <!--</div>-->
                                         <!--</div>-->
-                                    </li>
-                                </ul>
+
                             </div>
 
 
-                            <div class="list" th:each="schedule : ${consSchedule}">
-                                <ul>
-                                    <li>
-                                        <h4><span th:text="${schedule.day}"></span></h4>
-                                        <h4><span th:text="${schedule.time}"></span></h4>
-                                    </li>
-                                </ul>
-                            </div>
+                            <!--<div class="list" th:each="schedule : ${consSchedule}">-->
+                                <!--<ul>-->
+                                    <!--<li>-->
+                                        <!--<h4><span th:text="${schedule.day}"></span></h4>-->
+                                        <!--<h4><span th:text="${schedule.time}"></span></h4>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
                         </div>
                     </div>
 
@@ -127,22 +124,17 @@
 
                             <div class="profile-cons">
                                 <h3>Upcoming Cons:</h3>
+                                    <div class="profileConsList" th:each="con : ${cons}">
 
                                 <div class="list" th:each="schedule : ${consSchedule}">
-                                    <ul>
-                                        <li>
+
                                             <h4><span th:text="${schedule.day}"></span></h4>
                                             <h4><span th:text="${schedule.time}"></span></h4>
-                                        </li>
-                                    </ul>
 
-                                    <div class="profileConsList" th:each="con : ${cons}">
-                                        <ul>
-                                            <li>
+
+
                                                 <h4><span th:text="${con.name}"></span></h4>
 
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>

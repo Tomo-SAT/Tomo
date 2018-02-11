@@ -15,6 +15,7 @@ public interface ConScheduleRepository extends CrudRepository<ConSchedule, Long>
 
     @Query(nativeQuery = true,
             value = "SELECT * from con_schedule cs WHERE creator_id LIKE ?1 AND con_id = 1")
+
     List<ConSchedule> usersTimeByConId(long user_id);
 
 }
