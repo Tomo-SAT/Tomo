@@ -326,3 +326,8 @@ submit{
     padding: 40px;
     margin: 0;
 }
+
+.thumbnail{
+    width: 200px;
+    height: 200px;
+}
