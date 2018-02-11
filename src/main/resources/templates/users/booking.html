@@ -6,7 +6,27 @@
 <article class="fancy-border">
 <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 
-<h1>BOOKING</h1>
+
+    <div class="container">
+        <h1>BOOKING</h1>
+
+        <h2>Times for Katsucon</h2>
+
+        <div id="checkboxesF">
+            <input  type="checkbox" name="GroupF" value="F 8:00AM" id="F1"/>
+            <label class="whatever" for="F1">10:00 AM</label>
+            <input  type="checkbox" name="GroupF" value="F 8:30AM" id="F2"/>
+            <label class="whatever" for="F2">10:30 AM</label>
+            <input  type="checkbox" name="GroupF" value="F 9:00AM" id="F3"/>
+            <label class="whatever" for="F3">11:00 AM</label>
+        </div>
+
+
+        <hr/>
+
+        <button class="whatever">Book me!</button>
+
+    </div>
 
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
