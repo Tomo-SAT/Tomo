@@ -24,4 +24,4 @@ nbdist/
 .nb-gradle/
 
 
-.ds_Store
+*.DS_Store/
