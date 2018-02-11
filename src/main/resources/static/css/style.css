@@ -1,3 +1,6 @@
+body {
+    background-color: #cccccc;
+}
 
 .resize {
     height: 500px !important;
@@ -10,10 +13,12 @@
     font-family: 'Anton', sans-serif;
 }
 
-body {
-    background-color: #cccccc;
+.navbar.navbar-default {
+    margin: 0;
 }
 
-.navbar.navbar-default {
+.about-pic {
+    max-width: 360px;
+    max-height: 358px;
     margin: 0;
 }
