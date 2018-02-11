@@ -35,7 +35,7 @@ a {color: #ff7cb4;}
 }
 
 
-.container {background:#fff;margin-top: 58px;border-radius:8px;padding:32px 0;}
+.container {background:#fff;margin-top: 58px;border-radius:8px;padding:32px 20px;}
 
 .panel.panel-default.container {
     padding: 0;
@@ -348,7 +348,7 @@ submit{
 }
 
 .row {
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 
 .search {
