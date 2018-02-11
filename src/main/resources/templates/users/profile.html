@@ -93,7 +93,6 @@
             </th:block>
 
             <th:block th:if="${!isOwnProfile}">
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="cons-container profile-right">
@@ -120,10 +119,8 @@
                                     <h4><a href="/booking"> <span th:text="${con.name}"></span> </a></h4>
 
                                     <div class="list" th:each="schedule : ${consSchedule}">
-
                                         <span th:text="${schedule.day}"></span>
                                         <span th:text="${schedule.time}"></span>
-
                                     </div>
                                 </div>
                             </div>
