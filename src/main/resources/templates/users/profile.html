@@ -41,14 +41,11 @@
                         <div class="profile-cons">
 
                             <!--<li>Past</li>-->
-                            <h3>Upcoming Cons:</h3>
-
-                            Needed: List of cons attending by user.
-                            Needed: Within each con, dates and times the user is attending.
+                            <h1>Upcoming Cons:</h1>
 
                             <div class="profileConsList" th:each="con : ${cons}">
 
-                                <h5><span style="font-size: 24px;" th:text="${con.name}"></span></h5>
+                                <h5><span style="font-size: 22px;" th:text="${con.name}"></span></h5>
 
 
                                 <div class="list" th:each="schedule : ${consSchedule}">
@@ -118,10 +115,10 @@
                                 <div class="profileConsList" th:each="con : ${cons}">
                                     <h4><a href="/booking"> <span th:text="${con.name}"></span> </a></h4>
 
-                                    <div class="list" th:each="schedule : ${consSchedule}">
-                                        <span th:text="${schedule.day}"></span>
-                                        <span th:text="${schedule.time}"></span>
-                                    </div>
+                                    <!--<div class="list" th:each="schedule : ${consSchedule}">-->
+                                        <!--<span th:text="${schedule.day}"></span>-->
+                                        <!--<span th:text="${schedule.time}"></span>-->
+                                    <!--</div>-->
                                 </div>
                             </div>
                         </div>
