@@ -7,18 +7,23 @@
 <nav class="master-nav" th:include="fragments/navbar :: my-navbar"></nav>
 <div class="container">
     <div class="row">
-        <div clas="col-md-12">
+        <div class="col-md-6">
             <div th:each="user : ${searchedContent}">
                 Username: <a th:href="@{/profile/{id}(id=${user.id})}"><span th:text="${user.name}"></span></a>
                 <br/>
-                Email: <span th:text="${user.email}"></span>
+                <img th:src="${user.profilePicture}"/>
                 <br/>
-                Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span>
-                Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span>
-                <span th:text="${user.bio}"></span>
             </div>
         </div>
     </div>
+        <div class="col-md-6">
+            <div class="user-details">
+                <div th:each="user : ${searchedContent}">
+             Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span>
+             Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span>
+                </div>
+            </div>
+      </div>
 </div>
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
