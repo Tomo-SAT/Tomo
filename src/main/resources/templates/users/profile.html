@@ -49,42 +49,42 @@
 
                             <div class="profileConsList" th:each="con : ${cons}">
 
-                                        <h5><span style="font-size: 24px;" th:text="${con.name}"></span></h5>
+                                <h5><span style="font-size: 24px;" th:text="${con.name}"></span></h5>
 
 
-                                        <div class="list" th:each="schedule : ${consSchedule}">
+                                <div class="list" th:each="schedule : ${consSchedule}">
 
-                                                    <span th:text="${schedule.day}"></span>
-                                                    <span th:text="${schedule.time}"></span>
+                                    <span th:text="${schedule.day}"></span>
+                                    <span th:text="${schedule.time}"></span>
 
-                                        </div>
+                                </div>
 
-                                        <!--<div class="row">-->
-                                            <!--<div class="col-sm">-->
-                                                <!--<a class="btn btn-primary profileConsEditBtn"-->
-                                                   <!--th:href="${'cons/' + con.id + '/edit'}">-->
-                                                    <!--Edit Event-->
-                                                <!--</a>-->
+                                <!--<div class="row">-->
+                                <!--<div class="col-sm">-->
+                                <!--<a class="btn btn-primary profileConsEditBtn"-->
+                                <!--th:href="${'cons/' + con.id + '/edit'}">-->
+                                <!--Edit Event-->
+                                <!--</a>-->
 
-                                                <!--<form th:action="@{'/cons/' + con.id + '/delete'}" method="post">-->
-                                                    <!--<button type="submit"-->
-                                                            <!--class="btn btn-primary btn-danger profileConsDeleteBtn">-->
-                                                        <!--Remove Event-->
-                                                    <!--</button>-->
-                                                <!--</form>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
+                                <!--<form th:action="@{'/cons/' + con.id + '/delete'}" method="post">-->
+                                <!--<button type="submit"-->
+                                <!--class="btn btn-primary btn-danger profileConsDeleteBtn">-->
+                                <!--Remove Event-->
+                                <!--</button>-->
+                                <!--</form>-->
+                                <!--</div>-->
+                                <!--</div>-->
 
                             </div>
 
 
                             <!--<div class="list" th:each="schedule : ${consSchedule}">-->
-                                <!--<ul>-->
-                                    <!--<li>-->
-                                        <!--<h4><span th:text="${schedule.day}"></span></h4>-->
-                                        <!--<h4><span th:text="${schedule.time}"></span></h4>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
+                            <!--<ul>-->
+                            <!--<li>-->
+                            <!--<h4><span th:text="${schedule.day}"></span></h4>-->
+                            <!--<h4><span th:text="${schedule.time}"></span></h4>-->
+                            <!--</li>-->
+                            <!--</ul>-->
                             <!--</div>-->
                         </div>
                     </div>
@@ -96,7 +96,7 @@
             <th:block th:if="${!isOwnProfile}">
 
                 <div class="row">
-                    <div class="left col-lg-4">
+                    <div class="left col-md-6">
 
                         <div class="avatar">
                             <div></div>
@@ -119,21 +119,25 @@
                         <!--<i class="fa fa-tumblr-square" aria-hidden="true"></i>-->
                         <!--</div>-->
                     </div>
-                    <div class="right col-lg-10">
+                    <div class="right col-md-6">
                         <div class="cons-container profile-right">
 
                             <div class="profile-cons">
                                 <h3>Upcoming Cons:</h3>
-                                    <div class="profileConsList" th:each="con : ${cons}">
+                                <div class="profileConsList" th:each="con : ${cons}">
 
-                                <div class="list" th:each="schedule : ${consSchedule}">
+                                    <div class="list" th:each="schedule : ${consSchedule}">
 
-                                            <h4><span th:text="${schedule.day}"></span></h4>
-                                            <h4><span th:text="${schedule.time}"></span></h4>
+                                        <h4><span th:text="${schedule.day}"></span></h4>
+                                        <h4><span th:text="${schedule.time}"></span></h4>
 
 
 
+<<<<<<< HEAD
                                     <h4><a href="/booking"> <span th:text="${con.name}"></span> </a></h4>
+=======
+                                        <h4><span th:text="${con.name}"></span></h4>
+>>>>>>> 5fb554f946972fe048ae36686437bd6a0749da52
 
                                     </div>
                                 </div>
