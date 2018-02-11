@@ -13,6 +13,20 @@
                     <div class="col-md-6">
                         <div class="cons-container profile-right">
                             <img th:src="${user.profilePicture}"/>
+                            <div class="avatar">
+                                <div class="active"></div>
+                            </div>
+                            <div class="user-details">
+                                <br/>
+                                <h4>Hello, <span class="username" th:text="${user.name}"></span>!</h4> Welcome!
+                                <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
+                                <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
+                                <h4>Email: <span th:text="${user.email}"></span></h4>
+                            </div>
+                            <div class="profile-right">
+                                <h3>About Me! </h3>
+                                <p class="info" th:text="${user.bio}"></p>
+                            </div>
                             <div class="cn">
                                 <div class="inner">
                                     <!--<a id="upload-button">-->
@@ -24,21 +38,6 @@
                         <a class="submit" href="/profile/edit">Edit</a><br/>
                     </div> <!-- end of div column -->
                     <div class="col-md-6">
-                        <div class="avatar">
-                            <div></div>
-                            <div class="active"></div>
-                        </div>
-                        <div class="user-details">
-                            <br/>
-                            <h4>Hello, <span class="username" th:text="${user.name}"></span>!</h4> Welcome!
-                            <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
-                            <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
-                            <h4>Email: <span th:text="${user.email}"></span></h4>
-                        </div>
-                        <div class="profile-right">
-                            <h3>About Me! </h3>
-                            <p class="info" th:text="${user.bio}"></p>
-                        </div>
                         <div class="profile-cons">
 
                             <!--<li>Past</li>-->
@@ -96,23 +95,17 @@
             <th:block th:if="${!isOwnProfile}">
 
                 <div class="row">
-                    <div class="left col-md-6">
-
-                        <div class="avatar">
-                            <div></div>
-                            <div class="active"></div>
-                        </div>
-
-                        <div class="user-details">
+                    <div class="col-md-6">
+                        <div class="cons-container profile-right">
                             <h4>Viewing <span class="username" th:text="${user.name}"></span>'s profile...</h4>
                             <img th:src="${user.profilePicture}"/>
+                        <div class="user-details">
                             <p class="info" th:text="${user.bio}"></p>
-
                             <h4>Photographer: <span th:text="${user.photog == false ? 'No' : 'Yes'}"></span></h4>
                             <h4>Cosplayer: <span th:text="${user.cos == false ? 'No' : 'Yes'}"></span></h4>
                             <h4>Email: <span th:text="${user.email}"></span></h4>
+                            </div>
                         </div>
-
                         <!--<div class="social">-->
                         <!--<i class="fa fa-facebook-square" aria-hidden="true"></i>-->
                         <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>-->
@@ -121,19 +114,15 @@
                     </div>
                     <div class="right col-md-6">
                         <div class="cons-container profile-right">
-
                             <div class="profile-cons">
                                 <h3>Upcoming Cons:</h3>
                                 <div class="profileConsList" th:each="con : ${cons}">
+                                    <h4><a href="/booking"> <span th:text="${con.name}"></span> </a></h4>
 
                                     <div class="list" th:each="schedule : ${consSchedule}">
 
-                                        <h4><span th:text="${schedule.day}"></span></h4>
-                                        <h4><span th:text="${schedule.time}"></span></h4>
-
-
-
-                                        <h4><span th:text="${con.name}"></span></h4>
+                                        <span th:text="${schedule.day}"></span>
+                                        <span th:text="${schedule.time}"></span>
 
                                     </div>
                                 </div>
@@ -143,7 +132,6 @@
                 </div>
             </th:block>
         </main>
-
     </div>
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
