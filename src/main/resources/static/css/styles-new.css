@@ -331,7 +331,16 @@ submit{
     margin: 0;
 }
 
-.thumbnail{
-    width: 200px;
-    height: 200px;
+.thumbnail {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.row {
+    padding-top: 30px;
+}
+
+.search {
+    font-size: 20px;
 }
