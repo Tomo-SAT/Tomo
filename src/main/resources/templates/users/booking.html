@@ -8,9 +8,10 @@
 
 
     <div class="container">
-        <h1>BOOKING</h1>
-
-        <h2>Times for Katsucon</h2>
+        <div class="title-filter">
+            <h1>Booking</h1>
+        </div>
+            <h2>Times for Katsucon</h2>
 
         <div id="checkboxesF">
             <input  type="checkbox" name="GroupF" value="F 10:00AM" id="F1"/>
@@ -28,9 +29,29 @@
 
         <hr/>
 
-        <button class="whatever">Book me!</button>
+            <button class="whatever" data-toggle="modal" data-target="#myModal">Book me!</button>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
 
-    </div>
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Congratulations! You booked StellaChuu!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>An email confirmation has been sent to your inbox!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
 
 </article>
 <footer th:include="fragments/footer :: my-footer"></footer>
