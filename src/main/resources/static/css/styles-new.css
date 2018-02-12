@@ -354,3 +354,18 @@ submit{
 .search {
     font-size: 20px;
 }
+
+.tunafish {
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 7px;
+    border: solid 1px rgba(255,105,180,1);
+    background-color: #ff7cb4;
+    clear: none;
+    width: 100px;
+    display: inline-block;
+    line-height:48px;
+    height:50px;
+}
