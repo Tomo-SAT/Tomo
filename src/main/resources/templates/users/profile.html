@@ -46,8 +46,9 @@
                             <!--<div class="profileConsList" th:each="con : ${cons}">-->
 
                                 <!--<h5><span style="font-size: 22px;" th:text="${con.name}"></span></h5>-->
-                                <!--<h5><span style="font-size: 22px;" th:text="${con.name.{1}"></span></h5>-->
-                                <h5><span style="font-size: 22px">Katsucon</span></h5>
+
+                                    <h5><span style="font-size: 22px">Katsucon</span></h5>
+
 
                                 <div class="list" th:each="schedule : ${consSchedule}">
 
@@ -56,21 +57,6 @@
 
                                 </div>
 
-                                <!--<div class="row">-->
-                                <!--<div class="col-sm">-->
-                                <!--<a class="btn btn-primary profileConsEditBtn"-->
-                                <!--th:href="${'cons/' + con.id + '/edit'}">-->
-                                <!--Edit Event-->
-                                <!--</a>-->
-
-                                <!--<form th:action="@{'/cons/' + con.id + '/delete'}" method="post">-->
-                                <!--<button type="submit"-->
-                                <!--class="btn btn-primary btn-danger profileConsDeleteBtn">-->
-                                <!--Remove Event-->
-                                <!--</button>-->
-                                <!--</form>-->
-                                <!--</div>-->
-                                <!--</div>-->
 
                             <!--</div>-->
 
